@@ -1,8 +1,7 @@
+import HomeComponent from '@/components/pages/Home';
 
-const Home = ({}) => {
-  return (
-    <>adasdsad</>
-  )
-}
+const Home = () => {
+  return <HomeComponent />;
+};
 
-export default Home
+export default Home;

@@ -1,0 +1,66 @@
+.registration {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+
+  .content {
+    width: 500px;
+
+    .header {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 20px;
+      height: 80px;
+      border-bottom: 1px solid grey;
+
+      .title {
+        color: black;
+        font-size: 22px;
+        font-weight: 500;
+      }
+    }
+
+    .inputs {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      width: 100%;
+      justify-content: space-between;
+
+      .input {
+        margin-top: 20px;
+      }
+    }
+
+    .buttons {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+
+      .signUpBtn {
+        color: grey;
+      }
+
+      .haveAnAccount {
+        display: flex;
+        align-items: center;
+
+        .hint {
+          color: gray;
+          font-size: 12px;
+        }
+
+        .loginBtn {
+          color: rgb(6, 2, 249);
+          margin-left: 20px;
+          font-size: 14px;
+          cursor: pointer !important;
+        }
+      }
+    }
+  }
+}
