@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { Box, IconButton, Typography } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
@@ -5,7 +6,11 @@ import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import styles from './styles.module.scss';
 
 const Header = () => {
-  const handleClick = () => {};
+  const router = useRouter()
+
+  const handleClick = () => {
+    router.push('/registration')
+  };
   return (
     <Box className={styles.header}>
       <Box className={styles.leftSections}></Box>
