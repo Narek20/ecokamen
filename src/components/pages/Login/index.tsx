@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { Box, Typography, IconButton, TextField, Button } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Box, Typography, IconButton, TextField, Button } from '@mui/material';
 
 import styles from './styles.module.scss';
 
@@ -22,7 +22,7 @@ const LoginComponent = () => {
   };
 
   const handleSubmit = () => {};
-  console.log(userInfo);
+
   return (
     <Box className={styles.login}>
       <Box className={styles.content}>

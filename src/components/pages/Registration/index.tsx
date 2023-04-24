@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { Box, Typography, IconButton, TextField, Button } from '@mui/material';
+import { useRouter } from 'next/router';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { UserInfoFields } from '@/utils/Registration/constants';
+import { Box, Typography, IconButton, TextField, Button } from '@mui/material';
 
 import styles from './styles.module.scss';
-import { useRouter } from 'next/router';
-import { UserInfoFields } from '@/utils/Registration/constants';
 
 const RegistrationComponent = () => {
   const [userInfo, setUserInfo] = useState({
@@ -28,7 +28,7 @@ const RegistrationComponent = () => {
   };
 
   const handleSubmit = () => {};
-  console.log(userInfo);
+
   return (
     <Box className={styles.registration}>
       <Box className={styles.content}>

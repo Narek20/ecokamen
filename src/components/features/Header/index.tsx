@@ -6,16 +6,17 @@ import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import styles from './styles.module.scss';
 
 const Header = () => {
-  const router = useRouter()
+  const router = useRouter();
 
   const handleClick = () => {
-    router.push('/registration')
+    router.push('/registration');
   };
+  
   return (
     <Box className={styles.header}>
       <Box className={styles.leftSections}></Box>
       <Box className={styles.rightSections}>
-        <CallOutlinedIcon sx={{color: "black"}}/>
+        <CallOutlinedIcon sx={{ color: 'black' }} />
         <Typography className={styles.phoneNumber}>
           +7(495) 150-50-75
         </Typography>
