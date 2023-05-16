@@ -1,23 +1,29 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { UserInfoFields } from '@/utils/Registration/constants';
 import { Box, Typography, IconButton, TextField, Button } from '@mui/material';
+import ValidationMessage from '@/components/shared/ValidationMessage';
+import { useToast } from '@/contexts/toast.context';
+import { userRegister } from '@/services/auth.service';
+import { IUser } from '@/types/user.types';
+import { UserInfoFields } from '@/utils/Registration/constants';
 
 import styles from './styles.module.scss';
 
 const RegistrationComponent = () => {
-  const [userInfo, setUserInfo] = useState({
+  const [userInfo, setUserInfo] = useState<IUser>({
     name: '',
     surname: '',
-    middleName: '',
+    patronymic: '',
     email: '',
     phone: '',
     password: '',
     repeatPassword: '',
   });
+  const [validationMessage, setValidationMessage] = useState('');
 
   const router = useRouter();
+  const { showToast } = useToast();
 
   const handleClick = () => {
     router.push('/');
@@ -27,7 +33,23 @@ const RegistrationComponent = () => {
     setUserInfo({ ...userInfo, [key]: value });
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = async () => {
+    if (!Object.values(userInfo).find((value) => value === '')) {
+      setValidationMessage('');
+      const data = await userRegister(userInfo);
+
+      if (data.data) {
+        showToast('success', data.message);
+        router.push('/');
+      }
+
+      if (!data.success) {
+        showToast('error', data.message);
+      }
+    } else {
+      setValidationMessage('Please fill all fields');
+    }
+  };
 
   return (
     <Box className={styles.registration}>
@@ -50,6 +72,7 @@ const RegistrationComponent = () => {
             />
           ))}
         </Box>
+        {validationMessage && <ValidationMessage message={validationMessage} />}
         <Box className={styles.buttons}>
           <Button className={styles.signUpBtn} onClick={handleSubmit}>
             Зарегистрироваться
