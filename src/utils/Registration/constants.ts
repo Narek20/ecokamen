@@ -12,7 +12,7 @@ export const UserInfoFields = [
   {
     title: 'Отчество',
     type: 'text',
-    key: 'middleName',
+    key: 'patronymic',
   },
   {
     title: 'E-mail',
