@@ -34,8 +34,9 @@ const LoginComponent = () => {
       const data = await userLogin(userInfo.login, userInfo.password);
 
       if (data.data) {
+        if (data.token) localStorage.setItem('token', data.token);
         showToast('success', data.message);
-        login()
+        login();
         router.push('/');
       }
 
