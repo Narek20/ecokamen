@@ -6,17 +6,16 @@ import styles from './styles.module.scss';
 import CategoriesSidBar from '@/components/features/CategoriesSidebar';
 import CategoriesList from '@/components/features/CategoriesList';
 import Header from '@/components/features/Header';
+import StonesList from '@/components/features/StonesList';
 
 const CategoryComponent = () => {
   return (
-    <>
-      <Header />
-      <SearchBar />
-      <Box className={styles.content}>
-        <CategoriesSidBar />
-        <Box className={styles.lists}>xozanoc</Box>
+    <Box className={styles.content}>
+      <CategoriesSidBar />
+      <Box className={styles.lists}>
+        <StonesList />
       </Box>
-    </>
+    </Box>
   );
 };
 

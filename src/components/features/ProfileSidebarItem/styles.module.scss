@@ -1,0 +1,16 @@
+.item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 20px;
+  width: 300px;
+  transition-duration: 500ms;
+
+  .title {
+    margin-left: 20px;
+  }
+}
+
+.item:hover {
+  background-color: rgb(206, 203, 203);
+}
