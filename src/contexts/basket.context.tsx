@@ -2,20 +2,15 @@ import React, { createContext, ReactNode, useState } from 'react';
 
 // Create a BasketContext
 export const BasketContext = createContext({
-  isFixed: false,
   count: 0,
-  handleFix: (isFixed: boolean) => {},
   handleCountChange: (value: number) => {},
 });
 
 // BasketContext component that wraps your app
 export const BasketProvider = ({ children }: { children: ReactNode }) => {
-  const [isFixed, setIsFixed] = useState(false);
   const [count, setCount] = useState(0);
 
-  const handleFix = (isFixed: boolean) => {
-    setIsFixed(isFixed);
-  };
+
 
   const handleCountChange = (value: number) => {
     setCount(value);
@@ -23,7 +18,7 @@ export const BasketProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <BasketContext.Provider
-      value={{ isFixed, count, handleFix, handleCountChange }}
+      value={{ count, handleCountChange }}
     >
       {children}
     </BasketContext.Provider>

@@ -1,15 +1,12 @@
-import { FC, useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { BasketContext } from '@/contexts/basket.context';
 
 import styles from './styles.module.scss';
 
-interface IProps {
-  isFixed?: boolean;
-}
 
-const Basket: FC<IProps> = ({ isFixed }) => {
+const Basket = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const { count } = useContext(BasketContext);
 
