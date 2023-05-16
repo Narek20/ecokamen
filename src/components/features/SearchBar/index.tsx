@@ -3,6 +3,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import logo from '../../../assets/png/logo.png';
 
 import styles from './styles.module.scss';
+import Basket from '../Basket';
 
 const SearchBar = () => {
   return (
@@ -24,6 +25,7 @@ const SearchBar = () => {
           }}
         />
       </Box>
+      <Basket />
     </Box>
   );
 };

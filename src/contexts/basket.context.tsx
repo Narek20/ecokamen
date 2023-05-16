@@ -1,7 +1,7 @@
 import React, { createContext, ReactNode, useState } from 'react';
 
 // Create a BasketContext
-const BasketContext = createContext({
+export const BasketContext = createContext({
   isFixed: false,
   count: 0,
   handleFix: (isFixed: boolean) => {},
