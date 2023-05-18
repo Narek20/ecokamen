@@ -1,66 +1,34 @@
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { Box } from '@mui/material';
+import StoneCard from '../StoneCard';
+import { IStone } from '@/types/stone.types';
+import { getStonesByCategory } from '@/services/stones.service';
 
 import styles from './styles.module.scss';
-import CategoryCard from '../CategoryCard';
-import StoneCard from '../StoneCard';
-
-const categories = [
-  {
-    title: 'asdsad',
-    link: '/category/asdas',
-    imageHref:
-      'https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png',
-    price: 4000,
-  },
-  {
-    title: 'asdsdfsad',
-    link: '/category/asdfssdas',
-    imageHref:
-      'https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png',
-    price: 4000,
-  },
-  {
-    title: 'asdsdfsad',
-    link: '/category/adfsdas',
-    imageHref:
-      'https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png',
-    price: 4000,
-  },
-  {
-    title: 'asdsdfsad',
-    link: '/category/adfsdas',
-    imageHref:
-      'https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png',
-    price: 4000,
-  },
-  {
-    title: 'asdsdfsad',
-    link: '/category/adfsdas',
-    imageHref:
-      'https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png',
-    price: 4000,
-  },
-  {
-    title: 'asdsdfsad',
-    link: '/category/adfsdas',
-    imageHref:
-      'https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png',
-    price: 4000,
-  },
-  {
-    title: 'asdsdfsad',
-    link: '/category/adfsdas',
-    imageHref:
-      'https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png',
-    price: 4000,
-  },
-];
 
 const StonesList = () => {
+  const [stones, setStones] = useState<IStone[]>([]);
+  const router = useRouter();
+
+  const { category } = router.query;
+
+  const getStones = async () => {
+    const data = await getStonesByCategory(category as string);
+    console.log(data)
+    if (data.data) {
+      setStones(data.data)
+    }
+  };
+
+  useEffect(() => {
+    if(category) getStones();
+  }, [category]);
+
   return (
     <Box className={styles.stones}>
-      {categories.map((category) => (
-        <StoneCard key={category.title} {...category} />
+      {stones.map((category) => (
+        <StoneCard key={category.searchCategory} {...category} />
       ))}
     </Box>
   );
