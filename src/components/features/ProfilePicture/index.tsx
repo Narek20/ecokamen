@@ -28,11 +28,6 @@ const ProfileSidebarItems = [
     icon: <ArticleIcon />,
   },
   {
-    title: 'Мой кабинет',
-    link: '/profile',
-    icon: <AccountCircleIcon />,
-  },
-  {
     title: 'История заказов',
     link: '/profile',
     icon: <HistoryIcon />,

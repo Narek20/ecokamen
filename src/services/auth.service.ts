@@ -12,6 +12,7 @@ export const userLogin = async (
       email,
       password,
     });
+
     return data.data;
   } catch (err: any) {
     return {
@@ -24,7 +25,7 @@ export const userLogin = async (
 export const userRegister = async (newUserData: IUser): Promise<IResponse> => {
   try {
     const data = await axiosInstance.post(userEndpoints.REGISTER, {
-      ...newUserData
+      ...newUserData,
     });
 
     return data.data;
