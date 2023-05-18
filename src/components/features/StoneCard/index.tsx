@@ -1,17 +1,11 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { Box, Button, TextField, Typography } from '@mui/material';
+import { IStone } from '@/types/stone.types';
 
 import styles from './styles.module.scss';
 
-interface IProps {
-  title: string;
-  imageHref: string;
-  link: string;
-  price: number;
-}
-
-const StoneCard: FC<IProps> = ({ title, imageHref, link, price }) => {
+const StoneCard: FC<IStone> = ({ title, imageHref, link, price }) => {
   return (
     <Link className={styles.card} href={link}>
       <img className={styles.img} src={imageHref} alt="category" />

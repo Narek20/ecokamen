@@ -1,13 +1,17 @@
+import Link from 'next/link';
 import { Box } from '@mui/material';
+import { categories } from '@/utils/constants/sidebar';
 
 import styles from './styles.module.scss';
-import Link from 'next/link';
 
 const CategoriesSidBar = () => {
   return (
     <Box className={styles.categories}>
-      <Link href="/category/plitnyak" className={styles.category}>Плитняк</Link>
-      <Link href="/category/galka" className={styles.category}>Галька</Link>
+      {categories.map(({ link, title }) => (
+        <Link key={title} className={styles.category} href={link}>
+          {title}
+        </Link>
+      ))}
     </Box>
   );
 };
