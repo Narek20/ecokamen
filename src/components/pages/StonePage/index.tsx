@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 import { Box, Typography } from '@mui/material';
 import CategoriesSidBar from '@/components/features/CategoriesSidebar';
+import { categories } from '@/utils/constants/sidebar';
 
 import styles from './styles.module.scss';
-import { categories } from '@/utils/constants/sidebar';
 
 const StonePage = () => {
   const router = useRouter()
