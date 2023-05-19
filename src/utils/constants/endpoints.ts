@@ -1,6 +1,7 @@
 export const userEndpoints = {
   LOGIN: 'users/login',
   REGISTER: 'users/register',
+  GET_USER: 'users/',
 };
 
 export const orderEndpoints = {

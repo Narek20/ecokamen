@@ -39,7 +39,13 @@ const StoneInformation = () => {
             {stoneData.price}руб./м<sup>2</sup>
           </Typography>
         </Typography>
-        <StonePurchase thicknesses={stoneData.thickness.split(",")}/>
+        <StonePurchase
+          stoneId={stoneData._id}
+          thicknesses={stoneData.thickness.split(',')}
+          pageLink={`category/${stoneData.searchCategory}/${stoneData.searchName}`}
+          imageHref={stoneData.imageHrefs[0]}
+          {...stoneData}
+        />
       </Box>
     </Box>
   );

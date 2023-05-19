@@ -15,7 +15,7 @@ const ImageCarousel: FC<IProps> = ({ images }) => {
     <Carousel className={styles.carousel}>
       {images.map((image) => (
         <Box key={image}>
-          <Image src={image} alt={image} />
+          <img src={image} alt={image} />
         </Box>
       ))}
     </Carousel>
