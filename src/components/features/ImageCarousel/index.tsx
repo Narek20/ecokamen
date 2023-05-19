@@ -1,7 +1,8 @@
 import { FC } from 'react';
+import Image from 'next/image';
 import { Box } from '@material-ui/core';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import styles from './styles.module.scss';
 
@@ -14,7 +15,7 @@ const ImageCarousel: FC<IProps> = ({ images }) => {
     <Carousel className={styles.carousel}>
       {images.map((image) => (
         <Box key={image}>
-          <img src={image} alt={image} />
+          <Image src={image} alt={image} />
         </Box>
       ))}
     </Carousel>

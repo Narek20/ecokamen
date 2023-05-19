@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Box, Skeleton, Typography } from '@mui/material';
+import StonePurchase from '../StonePurchase';
+import ImageCarousel from '../ImageCarousel';
 import { getStoneByName } from '@/services/stone.service';
 import { IStone } from '@/types/stone.types';
-import ImageCarousel from '../ImageCarousel';
 
 import styles from './styles.module.scss';
-import StonePurchase from '../StonePurchase';
 
 const StoneInformation = () => {
   const [stoneData, setStoneData] = useState<IStone | null>(null);

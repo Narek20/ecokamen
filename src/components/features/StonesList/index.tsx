@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { Box } from '@mui/material';
 import StoneCard from '../StoneCard';
 import { IStone } from '@/types/stone.types';
-import { getStonesByCategory } from '@/services/stones.service';
+import { getStonesByCategory } from '@/services/stone.service';
 
 import styles from './styles.module.scss';
 
@@ -15,7 +15,6 @@ const StonesList = () => {
 
   const getStones = async () => {
     const data = await getStonesByCategory(category as string);
-    console.log(data)
     if (data.data) {
       setStones(data.data)
     }

@@ -35,7 +35,6 @@ const StonePurchase: FC<IProps> = ({ thicknesses }) => {
 
   const handleAdd = () => {
     if (thickness && stoneQty) {
-      console.log("asdsad")
       handleCountChange(1);
     }
   };
