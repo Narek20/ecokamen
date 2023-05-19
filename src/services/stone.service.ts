@@ -2,7 +2,7 @@ import { stoneEndpoints } from '@/utils/constants/endpoints';
 import { axiosInstance } from './axios.service';
 import { IResponse } from '@/types/response.types';
 
-export const getStone = async (stoneName: string): Promise<IResponse> => {
+export const getStoneByName = async (stoneName: string): Promise<IResponse> => {
   try {
     const data = await axiosInstance.get(stoneEndpoints.GET_STONE + stoneName);
 

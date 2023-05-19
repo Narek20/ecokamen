@@ -28,7 +28,7 @@ const Basket = () => {
       <Box className={styles.container}>
         <ShoppingCartOutlinedIcon sx={{ color: 'black' }} />
         <Box className={styles.countContainer}>
-          <Typography className={styles.count}>{count + 20}</Typography>
+          <Typography className={styles.count}>{count}</Typography>
         </Box>
         <Typography className={styles.title}>Корзина</Typography>
       </Box>
