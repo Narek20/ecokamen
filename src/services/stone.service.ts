@@ -19,7 +19,6 @@ export const getStonesByCategory = async (
   categoryName: string
 ): Promise<IResponse> => {
   try {
-    console.log(stoneEndpoints.GET_STONES_BY_CATEGORY, categoryName)
     const data = await axiosInstance.get(
       stoneEndpoints.GET_STONES_BY_CATEGORY + categoryName
     );

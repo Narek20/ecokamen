@@ -2,7 +2,7 @@ export type IStone =  {
   title: string;
   description: string;
   category: string;
-  imageHref: string,
+  imageHrefs: string[],
   texture: string;
   price: string;
   thickness: string;

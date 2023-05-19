@@ -1,0 +1,35 @@
+.stoneInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  .title {
+    color: black;
+    font-size: 25px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid gray;
+  }
+
+  .priceLabel {
+    color: black;
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+
+    .price {
+      color: rgb(253, 106, 14);
+      font-size: 21px;
+      margin-left: 10px;
+    }
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+
+    .stoneInfo {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
