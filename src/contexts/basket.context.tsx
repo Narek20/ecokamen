@@ -10,10 +10,8 @@ export const BasketContext = createContext({
 export const BasketProvider = ({ children }: { children: ReactNode }) => {
   const [count, setCount] = useState(0);
 
-
-
   const handleCountChange = (value: number) => {
-    setCount(value);
+    setCount(count + value);
   };
 
   return (
