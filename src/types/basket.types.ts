@@ -5,5 +5,6 @@ export type IBasket = {
   thickness: string;
   quantity: number;
   userId: string;
+  price: string;
   stoneId: string;
 };

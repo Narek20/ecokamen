@@ -52,8 +52,25 @@ export const removeBasketItem = async (
   stoneId: string
 ): Promise<IResponse> => {
   try {
-    const data = await axiosInstance.get(
+    const data = await axiosInstance.delete(
       basketEndpoints.DELETE_BASKET_ITEM + userId + '/' + stoneId
+    );
+
+    return data.data;
+  } catch (err: any) {
+    return {
+      success: false,
+      message: err.message,
+    };
+  }
+};
+
+export const removeAllBasketItems = async (
+  userId: string,
+): Promise<IResponse> => {
+  try {
+    const data = await axiosInstance.delete(
+      basketEndpoints.DELETE_BASKET_ITEM + userId
     );
 
     return data.data;

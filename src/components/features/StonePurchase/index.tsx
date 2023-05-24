@@ -23,13 +23,14 @@ interface IProps {
   imageHref: string;
   pageLink: string;
   thickness: string;
+  price: string;
 }
 
 const StonePurchase: FC<IProps> = (props) => {
   const [thickness, setThickness] = useState(props.thicknesses[0]);
   const [stoneQty, setStoneQty] = useState(1);
 
-  const { handleCountChange } = useContext(BasketContext);
+  const { handleCountChange, refetchItems } = useContext(BasketContext);
   const { userData } = useContext(AuthContext);
   const { showToast } = useToast();
 
@@ -47,20 +48,22 @@ const StonePurchase: FC<IProps> = (props) => {
   };
 
   const handleAdd = async () => {
-    if (thickness && stoneQty) {
+    if (stoneQty) {
       if (basketItems.find((stone: string) => stone === props.stoneId)) {
         showToast('info', 'Предмет уже добавлень в корзину');
         return;
       }
-      console.log(props);
+
       const data = await addBasketItem({
         ...props,
         userId: userData._id,
         quantity: stoneQty,
+        thickness: thickness ?? '',
       });
 
       if (data.success) {
         handleCountChange(1);
+        refetchItems();
         showToast('success', 'Педмет успешно добавлен в корзину');
 
         basketItems.push(props.stoneId);
@@ -72,19 +75,24 @@ const StonePurchase: FC<IProps> = (props) => {
   return (
     <Box className={styles.purchaseInfo}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Толщина, мм</InputLabel>
-        <Select
-          value={thickness}
-          sx={{}}
-          label="Толщина, мм"
-          onChange={handleThicknessChange}
-        >
-          {props.thicknesses.map((thickness) => (
-            <MenuItem key={thickness} value={thickness}>
-              {thickness}
-            </MenuItem>
-          ))}
-        </Select>
+        {thickness && (
+          <>
+            {' '}
+            <InputLabel id="demo-simple-select-label">Толщина, мм</InputLabel>
+            <Select
+              value={thickness}
+              sx={{}}
+              label="Толщина, мм"
+              onChange={handleThicknessChange}
+            >
+              {props.thicknesses.map((thickness) => (
+                <MenuItem key={thickness} value={thickness}>
+                  {thickness}
+                </MenuItem>
+              ))}
+            </Select>
+          </>
+        )}
       </FormControl>
       <Box className={styles.actions}>
         <TextField

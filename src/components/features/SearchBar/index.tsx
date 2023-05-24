@@ -4,8 +4,10 @@ import logo from '../../../assets/png/logo.png';
 
 import styles from './styles.module.scss';
 import Basket from '../Basket';
+import { useRouter } from 'next/router';
 
 const SearchBar = () => {
+
   return (
     <Box className={styles.searchContainer}>
       <Box className={styles.logoContainer}>

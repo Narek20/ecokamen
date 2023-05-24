@@ -1,0 +1,28 @@
+.details {
+  margin-top: 140px;
+
+  .title {
+    color: black;
+    font-size: 25px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid gray;
+  }
+
+  .description {
+    color: rgb(70, 69, 69);
+    line-height: 25px;
+    font-weight: 300;
+  }
+
+  .advantagesTitle {
+    color: black;
+    font-size: 22px;
+    margin-top: 40px;
+  }
+
+  .advantages {
+    color: rgb(70, 69, 69);
+    line-height: 25px;
+    font-weight: 300;
+  }
+}

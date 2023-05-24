@@ -1,0 +1,37 @@
+.basketPage {
+  padding-bottom: 50px;
+
+  .basketHeader {
+    display: flex;
+    width: 100%;
+    padding: 0px 20px;
+    justify-content: space-between;
+
+    .search {
+      width: 400px;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+
+      .basketQty {
+        height: 30px;
+        color: black;
+        border-bottom: 2px solid gray;
+      }
+
+      .basketRemoveBtn {
+        color: black;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .itemsList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+}

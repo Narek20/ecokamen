@@ -45,7 +45,7 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   const getUserData = async () => {
     const data = await getUser();
-
+    
     if (data.success) {
       setUserData(data.data);
     }
