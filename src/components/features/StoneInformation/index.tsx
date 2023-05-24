@@ -7,6 +7,8 @@ import { getStoneByName } from '@/services/stone.service';
 import { IStone } from '@/types/stone.types';
 
 import styles from './styles.module.scss';
+import StoneCharacteristics from '../StoneCharacteristics';
+import StoneDetails from '../StoneDetails';
 
 const StoneInformation = () => {
   const [stoneData, setStoneData] = useState<IStone | null>(null);
@@ -29,23 +31,31 @@ const StoneInformation = () => {
   if (!stoneData) return <Skeleton />;
 
   return (
-    <Box className={styles.stoneInfo}>
-      <ImageCarousel images={stoneData.imageHrefs} />
-      <Box>
-        <Typography className={styles.title}>{stoneData.title}</Typography>
-        <Typography className={styles.priceLabel}>
-          Цена:{' '}
-          <Typography className={styles.price}>
-            {stoneData.price}руб./м<sup>2</sup>
+    <Box className={styles.container}>
+      <Box className={styles.stoneInfo}>
+        <ImageCarousel images={stoneData.imageHrefs} />
+        <Box>
+          <Typography className={styles.title}>{stoneData.title}</Typography>
+          <Typography className={styles.priceLabel}>
+            Цена:{' '}
+            <Typography className={styles.price}>
+              {stoneData.price}руб./м<sup>2</sup>
+            </Typography>
           </Typography>
-        </Typography>
-        <StonePurchase
-          stoneId={stoneData._id}
-          thicknesses={stoneData.thickness.split(',')}
-          pageLink={`category/${stoneData.searchCategory}/${stoneData.searchName}`}
-          imageHref={stoneData.imageHrefs[0]}
-          {...stoneData}
-        />
+          <StonePurchase
+            stoneId={stoneData._id}
+            thicknesses={
+              stoneData.thickness.length ? stoneData.thickness.split(',') : []
+            }
+            pageLink={`category/${stoneData.searchCategory}/${stoneData.searchName}`}
+            imageHref={stoneData.imageHrefs[0]}
+            {...stoneData}
+          />
+        </Box>
+      </Box>
+      <Box className={styles.stoneDetails}>
+        <StoneDetails stone={stoneData} />
+        <StoneCharacteristics stone={stoneData} />
       </Box>
     </Box>
   );

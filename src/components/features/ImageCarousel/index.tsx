@@ -1,4 +1,7 @@
-import { FC } from 'react';
+import {
+  FC,
+  cloneElement,
+} from 'react';
 import Image from 'next/image';
 import { Box } from '@material-ui/core';
 import { Carousel } from 'react-responsive-carousel';
@@ -12,10 +15,21 @@ interface IProps {
 
 const ImageCarousel: FC<IProps> = ({ images }) => {
   return (
-    <Carousel className={styles.carousel}>
+    <Carousel
+      autoPlay
+      className={styles.carousel}
+      renderThumbs={(children) =>
+        children.map(
+          (
+            item: any,
+            index
+          ) => cloneElement(item, { className: 'thumb' })
+        )
+      }
+    >
       {images.map((image) => (
-        <Box key={image}>
-          <img src={image} alt={image} />
+        <Box className={styles.carousel} key={image}>
+          <img className={styles.image} src={image} alt={image} />
         </Box>
       ))}
     </Carousel>

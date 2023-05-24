@@ -1,14 +1,20 @@
 import { useContext, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import { Box, Typography } from '@mui/material';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { BasketContext } from '@/contexts/basket.context';
 
 import styles from './styles.module.scss';
 
-
 const Basket = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const { count } = useContext(BasketContext);
+
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/basket');
+  };
 
   const handleScroll = () => {
     const position = window.pageYOffset;
@@ -24,7 +30,10 @@ const Basket = () => {
   }, []);
 
   return (
-    <Box className={scrollPosition > 115 ? styles.fixedBasket : styles.basket}>
+    <div
+      className={scrollPosition > 115 ? styles.fixedBasket : styles.basket}
+      onClick={handleClick}
+    >
       <Box className={styles.container}>
         <ShoppingCartOutlinedIcon sx={{ color: 'black' }} />
         <Box className={styles.countContainer}>
@@ -32,7 +41,7 @@ const Basket = () => {
         </Box>
         <Typography className={styles.title}>Корзина</Typography>
       </Box>
-    </Box>
+    </div>
   );
 };
 

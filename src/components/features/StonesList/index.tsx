@@ -8,14 +8,15 @@ import { getStonesByCategory } from '@/services/stone.service';
 import styles from './styles.module.scss';
 
 const StonesList = () => {
-  const [stones, setStones] = useState<IStone[]>([]);
+  const [stones, setStones] = useState<IStone[] | []>([]);
   const router = useRouter();
 
   const { category } = router.query;
 
   const getStones = async () => {
     const data = await getStonesByCategory(category as string);
-    if (data.data) {
+    if (data.success) {
+      console.log(data)
       setStones(data.data)
     }
   };
@@ -27,7 +28,7 @@ const StonesList = () => {
   return (
     <Box className={styles.stones}>
       {stones.map((category) => (
-        <StoneCard key={category.searchCategory} {...category} />
+        <StoneCard key={category.searchName} {...category} />
       ))}
     </Box>
   );

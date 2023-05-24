@@ -10,5 +10,6 @@ export type IStone =  {
   usage: string;
   searchName: string;
   searchCategory: string;
+  deliveryForm?: string;
   link: string;
 }
