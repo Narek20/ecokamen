@@ -1,0 +1,89 @@
+.footer {
+  width: 100%;
+  padding: 40px;
+  background-color: #f6f6f7;
+  .date {
+    color: grey;
+    margin-top: 20px;
+  }
+
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      font-size: 27px;
+      width: 300px;
+      font-weight: 700;
+      line-height: 42px;
+      text-align: left;
+      color: black;
+    }
+    .hint {
+      color: black;
+      font-size: 18px;
+    }
+    .getInTouch {
+      display: flex;
+      margin-top: 20px;
+
+      .emailInp {
+        width: 300px;
+        border: 1px solid;
+
+        // fieldset {
+        //   border-radius: 3px;
+        //   border-top-right-radius: 0px;
+        //   border-bottom-right-radius: 0px;
+        // }
+      }
+
+      .sendBtn {
+        background-color: black;
+        color: white;
+        margin-left: -1px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+      }
+    }
+  }
+
+  .line {
+    width: 100%;
+    color: rgb(233, 230, 230);
+    margin: 50px 0px;
+  }
+
+  .info {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    .infoSections {
+      display: flex;
+      flex-direction: column;
+      max-width: 300px;
+
+      .sectionTitle {
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0px;
+        color: black;
+      }
+
+      .sectionElem {
+        display: flex;
+        font-size: 14px;;
+        margin-top: 10px;
+        color: black;
+        align-items: center;
+
+        .icon {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

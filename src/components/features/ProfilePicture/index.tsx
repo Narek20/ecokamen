@@ -45,7 +45,7 @@ const ProfilePicture = () => {
   return (
     <Box>
       <IconButton onClick={() => setIsDrawerOpen(true)}>
-        <AccountCircleIcon sx={{ width: 30, height: 30 }} />
+        <AccountCircleIcon sx={{color: "black", width: 30, height: 30 }} />
       </IconButton>
       <Drawer
         isOpen={isDrawerOpen}
