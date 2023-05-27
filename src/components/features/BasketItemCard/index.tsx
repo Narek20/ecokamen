@@ -1,11 +1,12 @@
 import { ChangeEvent, FC, useContext, useState } from 'react';
 import { Box, TextField, IconButton, Typography, Button } from '@mui/material';
-import { IBasket } from '@/types/basket.types';
-
-import styles from './styles.module.scss';
+import { placeOrder } from '@/services/order.service';
 import { removeBasketItem } from '@/services/basket.service';
 import { useToast } from '@/contexts/toast.context';
 import { BasketContext } from '@/contexts/basket.context';
+import { IBasket } from '@/types/basket.types';
+
+import styles from './styles.module.scss';
 
 const BasketItemCard: FC<IBasket> = ({
   title,
@@ -28,7 +29,20 @@ const BasketItemCard: FC<IBasket> = ({
     setItemQuantity(+evt.target.value);
   };
 
-  const handleOrder = () => {};
+  const handleOrder = async () => {
+    const data = await placeOrder({
+      stoneId,
+      userId,
+      price: +itemQuantity * +price,
+      deliveryPrice: 0,
+      state: 'active',
+      quantity: itemQuantity,
+    });
+
+    if (data.success) {
+      showToast('success', data.message);
+    }
+  };
 
   const handleRemove = async () => {
     const data = await removeBasketItem(userId, stoneId);
@@ -65,7 +79,6 @@ const BasketItemCard: FC<IBasket> = ({
         </Box>
       </Box>
       <Box className={styles.priceInfo}>
-        <Box className={styles.priceContainer}></Box>
         <Box>
           <TextField
             className={styles.qtyInput}

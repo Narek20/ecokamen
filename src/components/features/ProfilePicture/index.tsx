@@ -19,17 +19,17 @@ const ProfileSidebarItems = [
   },
   {
     title: 'Текущие заказы',
-    link: '/profile',
+    link: '/profile/current-orders',
     icon: <MeetingRoomIcon />,
   },
   {
     title: 'Личные данные',
-    link: '/profile',
+    link: '/profile/personal',
     icon: <ArticleIcon />,
   },
   {
     title: 'История заказов',
-    link: '/profile',
+    link: '/profile/orders-history',
     icon: <HistoryIcon />,
   },
   {
