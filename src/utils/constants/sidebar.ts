@@ -66,3 +66,22 @@ export const categories = [
       'https://www.pankamen.ru/upload/iblock/a13/a1367de15e3b36a530b50e2ca5e88a5e.jpg',
   },
 ];
+
+export const profileSidebar = [
+  {
+    link: '/profile/',
+    title: 'Личный Кабинет',
+  },
+  {
+    link: '/profile/personal',
+    title: 'Личные Данные',
+  },
+  {
+    link: '/profile/current-orders',
+    title: 'Текущие заказы',
+  },
+  {
+    link: '/profile/orders-history',
+    title: 'История заказов',
+  },
+];

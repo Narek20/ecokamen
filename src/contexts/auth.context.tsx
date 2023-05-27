@@ -48,6 +48,7 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
     
     if (data.success) {
       setUserData(data.data);
+      login()
     }
   };
 
