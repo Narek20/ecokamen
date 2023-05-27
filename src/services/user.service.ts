@@ -14,3 +14,24 @@ export const getUser = async (): Promise<IResponse> => {
     };
   }
 };
+
+export const updateUser = async (
+  fullName: string,
+  email: string,
+  phone: string
+): Promise<IResponse> => {
+  try {
+    const data = await axiosInstance.put(userEndpoints.UPDATE_USER, {
+      fullName,
+      phone,
+      email,
+    });
+
+    return data.data;
+  } catch (err: any) {
+    return {
+      success: false,
+      message: err.message,
+    };
+  }
+};
