@@ -91,3 +91,57 @@
     display: none;
   }
 }
+
+
+// .card {
+//   width: 350px;
+//   height: fit-content;
+//   margin: 0px 10px 10px 10px;
+//   transition-duration: 500ms;
+//   border-radius: 10px;
+//   box-shadow: 0px 3px 10px 1px rgb(128, 128, 128, 0.6);
+
+//   .content {
+//     width: 100%;
+//     display: flex;
+//     position: relative;
+//     padding: 20px;
+
+//     flex-direction: column;
+//     justify-content: space-between;
+//     align-items: center;
+//     text-align: center;
+
+//     .img {
+//       width: 180px;
+//       height: 180px;
+//     }
+
+//     .title {
+//       color: black;
+//       font-size: 24px;
+//       margin-top: 30px;
+//       font-weight: 500;
+//     }
+//   }
+
+//   .actions {
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+
+//     .addBasketBtn {
+//       height: 50px;
+//       background-color: black;
+//     }
+
+//     .price {
+//       color: #941b0c;
+//       font-size: 20px;
+//       font-weight: 700;
+//     }
+//   }
+// }
+
+// .card:hover {
+// }

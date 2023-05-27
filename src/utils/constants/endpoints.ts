@@ -2,11 +2,14 @@ export const userEndpoints = {
   LOGIN: 'users/login',
   REGISTER: 'users/register',
   GET_USER: 'users/',
+  UPDATE_USER: 'users/',
 };
 
 export const orderEndpoints = {
-  USERS: 'orders/',
-  ORDERS: 'orders/',
+  GET_CURRENT_ORDERS: 'orders/',
+  GET_ORDERS_HISTORY: 'orders/history/',
+  PLACE_ORDER: 'orders/',
+  DELETE_ORDER: 'orders/',
 };
 
 export const stoneEndpoints = {
