@@ -1,0 +1,17 @@
+.buyerInfo {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  text-align: center;
+
+  .title {
+    font-size: 25px;
+    color: black;
+    margin-bottom: 20px;
+  }
+
+  .textField {
+    margin-top: 10px;
+  }
+
+}

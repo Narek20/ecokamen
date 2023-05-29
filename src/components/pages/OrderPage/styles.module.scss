@@ -1,0 +1,22 @@
+.orderPage {
+  .orderComponent {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .actions {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: 50px;
+
+    .nextBtn {
+      margin-left: 10px;
+
+    }
+
+    .previousBtn {
+    }
+  }
+}
