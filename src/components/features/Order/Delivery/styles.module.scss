@@ -1,0 +1,46 @@
+.deliveryDetails {
+  width: 30%;
+  text-align: center;
+
+  .title {
+    font-size: 25px;
+    color: black;
+    margin-bottom: 20px;
+  }
+
+  .variantsContainer {
+    display: flex;
+    justify-content: space-between;
+
+    .deliveryVariant {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      cursor: pointer;
+
+      .variantTitle {
+        color: black;
+      }
+
+      .variantPrice {
+        color: gray;
+        margin-top: 10px;
+        display: flex;
+
+        .price {
+          color: black;
+          font-weight: 700;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .deliveryVariant:hover {
+      box-shadow: 0px 3px 10px 1px #2075de;
+    }
+  }
+}

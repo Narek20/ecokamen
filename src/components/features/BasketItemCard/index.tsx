@@ -7,6 +7,7 @@ import { BasketContext } from '@/contexts/basket.context';
 import { IBasket } from '@/types/basket.types';
 
 import styles from './styles.module.scss';
+import { useRouter } from 'next/router';
 
 const BasketItemCard: FC<IBasket> = ({
   title,
@@ -20,6 +21,7 @@ const BasketItemCard: FC<IBasket> = ({
 }) => {
   const [itemQuantity, setItemQuantity] = useState(quantity);
 
+  const router = useRouter()
   const { showToast } = useToast();
   const { refetchItems } = useContext(BasketContext);
 
@@ -29,19 +31,8 @@ const BasketItemCard: FC<IBasket> = ({
     setItemQuantity(+evt.target.value);
   };
 
-  const handleOrder = async () => {
-    const data = await placeOrder({
-      stoneId,
-      userId,
-      price: +itemQuantity * +price,
-      deliveryPrice: 0,
-      state: 'active',
-      quantity: itemQuantity,
-    });
-
-    if (data.success) {
-      showToast('success', data.message);
-    }
+  const handleClick = async () => {
+    router.push("/order")
   };
 
   const handleRemove = async () => {
@@ -95,7 +86,7 @@ const BasketItemCard: FC<IBasket> = ({
           <Typography className={styles.priceLabel}>Сумма</Typography>
         </Box>
         <Box className={styles.actions}>
-          <Button className={styles.orderBtn} onClick={handleOrder}>
+          <Button className={styles.orderBtn} onClick={handleClick}>
             Заказать товар
           </Button>
           <Button className={styles.removeBtn} onClick={handleRemove}>
