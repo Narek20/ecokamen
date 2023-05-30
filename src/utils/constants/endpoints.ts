@@ -8,6 +8,7 @@ export const userEndpoints = {
 export const orderEndpoints = {
   GET_CURRENT_ORDERS: 'orders/',
   GET_ORDERS_HISTORY: 'orders/history/',
+  GET_ORDER_BY_ID: 'orders/one/',
   PLACE_ORDER: 'orders/',
   DELETE_ORDER: 'orders/',
 };

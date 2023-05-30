@@ -1,10 +1,16 @@
 export interface IOrder {
-  stoneId: string;
+  stoneIds: string[];
   userId: string;
-  price: number;
+  price: string;
   state: string;
   quantity: number;
   deliveryPrice: number;
+  payed: boolean;
+  paymentType: string;
+  buyerFullName: string;
+  buyerEmail: string;
+  buyerPhone: string;
+  buyerAddress: string;
 }
 
 export enum OrderDetails {
@@ -16,12 +22,14 @@ export enum OrderDetails {
 
 export interface IOrderDetails {
   personalDetails: {
-    fullName: string,
-    email: string,
-    phone: string,
-    address: string,
-  },
-  deliveryDetails: string,
-  paymentDetails: string,
-  productIds: string[] | [],
+    fullName: string;
+    email: string;
+    phone: string;
+    address: string;
+  };
+  deliveryDetails: string;
+  paymentDetails: string;
+  productIds: string[] | [];
+  userId: string;
+  totalPrice: number;
 }

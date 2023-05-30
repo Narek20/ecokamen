@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Image from 'next/image';
 import { Box, Typography } from '@mui/material';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
@@ -6,7 +7,6 @@ import SberbankLogo from '@/assets/Images/sberbank.png'
 import { OrderDetails } from '@/types/order.types';
 
 import styles from './styles.module.scss';
-import Image from 'next/image';
 
 interface IProps {
   paymentVariant: string;

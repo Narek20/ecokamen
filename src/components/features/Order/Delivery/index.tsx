@@ -18,9 +18,9 @@ const Delivery: FC<IProps> = ({ deliveryVariant, handleChange }) => {
        <Box className={styles.variantsContainer}>
       <Box
         className={styles.deliveryVariant}
-        onClick={() => handleChange('Самовывоз', OrderDetails.DELIVERY_DETAILS)}
+        onClick={() => handleChange('0', OrderDetails.DELIVERY_DETAILS)}
         sx={
-          deliveryVariant === 'Самовывоз'
+          deliveryVariant === '0'
             ? {
                 boxShadow: '0px 3px 10px 1px #2075de',
               }
@@ -36,10 +36,10 @@ const Delivery: FC<IProps> = ({ deliveryVariant, handleChange }) => {
       <Box
         className={styles.deliveryVariant}
         onClick={() =>
-          handleChange('Наша доставка', OrderDetails.DELIVERY_DETAILS)
+          handleChange('1000', OrderDetails.DELIVERY_DETAILS)
         }
         sx={
-          deliveryVariant === 'Наша доставка'
+          deliveryVariant === '1000'
             ? {
                 boxShadow: '0px 3px 10px 1px #2075de',
               }
