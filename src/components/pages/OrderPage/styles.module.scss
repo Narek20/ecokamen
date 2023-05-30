@@ -12,11 +12,13 @@
     margin-top: 50px;
 
     .nextBtn {
-      margin-left: 10px;
-
+      color: green;
+      border: 1px solid green;
+      width: 200px;
     }
 
     .previousBtn {
+      margin-right: 10px;
     }
   }
 }

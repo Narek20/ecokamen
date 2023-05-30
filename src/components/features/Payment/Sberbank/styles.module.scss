@@ -1,0 +1,24 @@
+.sberbankPayment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .paymentVariant {
+    display: flex;
+    align-items: center;
+
+    .variantTitle {
+      color: black;
+      margin-left: 20px;
+    }
+  }
+
+  .totalPrice {
+    color: black;
+    font-weight: 600;
+  }
+
+  .payBtn {
+
+  }
+}
