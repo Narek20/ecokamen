@@ -1,3 +1,4 @@
+import { SearchIcon } from '@mui/icons-material/Search';
 export const userEndpoints = {
   LOGIN: 'users/login',
   REGISTER: 'users/register',
@@ -15,6 +16,7 @@ export const orderEndpoints = {
 
 export const stoneEndpoints = {
   GET_STONE: 'stones/',
+  SEARCH_STONES: 'stones/search/',
   GET_STONES_BY_CATEGORY: 'stones/category/',
 };
 

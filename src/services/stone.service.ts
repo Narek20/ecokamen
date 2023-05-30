@@ -31,3 +31,20 @@ export const getStonesByCategory = async (
     };
   }
 };
+
+export const getStonesBySearchKey = async (
+  searchKey: string
+): Promise<IResponse> => {
+  try {
+    const data = await axiosInstance.get(
+      stoneEndpoints.SEARCH_STONES + searchKey
+    );
+
+    return data.data;
+  } catch (err: any) {
+    return {
+      success: false,
+      message: err.message,
+    };
+  }
+};
