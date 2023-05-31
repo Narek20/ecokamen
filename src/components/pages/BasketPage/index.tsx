@@ -41,7 +41,7 @@ const BasketPage = () => {
   };
 
   useEffect(() => {
-    if (basketItems.length) setFilteredItems(basketItems);
+    setFilteredItems(basketItems);
   }, [basketItems]);
 
   return (
