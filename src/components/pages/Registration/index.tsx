@@ -34,16 +34,14 @@ const RegistrationComponent = () => {
   };
 
   const handleSubmit = async () => {
-    if (!Object.values(userInfo).find((value) => value === '')) {
+    if (Object.values(userInfo).every((value) => value !== '')) {
       setValidationMessage('');
       const data = await userRegister(userInfo);
 
-      if (data.data) {
+      if (data.success) {
         showToast('success', data.message);
         router.push('/');
-      }
-
-      if (!data.success) {
+      } else {
         showToast('error', data.message);
       }
     } else {
