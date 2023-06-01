@@ -4,15 +4,20 @@ import { IBasket } from '@/types/basket.types';
 
 import styles from './styles.module.scss';
 
-const OrderCard: FC<IBasket> = ({
+interface IProps {
+  title: string;
+  imageHref: string;
+  price: string;
+  thickness: string;
+  quantity: number;
+}
+
+const OrderCard: FC<IProps> = ({
   title,
   imageHref,
-  pageLink,
   price,
   thickness,
   quantity,
-  userId,
-  stoneId,
 }) => {
   return (
     <Box className={styles.card}>

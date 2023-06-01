@@ -1,10 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, FC } from 'react';
 import { Box, Typography } from '@mui/material';
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 
 import styles from './styles.module.scss';
 
-const MapComponent = () => {
+interface IProps {
+  isContactMap?: boolean;
+}
+
+const MapComponent: FC<IProps> = ({ isContactMap }) => {
   const [location, setLocation] = useState([55.751574, 37.573856]);
   const [address, setAddress] = useState('');
   const defaultState = {
@@ -32,10 +36,15 @@ const MapComponent = () => {
   }, [location]);
 
   return (
-    <Box className={styles.mapContainer}>
-      <Typography className={styles.mapLabel}>
-        Выберите место доставки на карте
-      </Typography>
+    <Box
+      className={styles.mapContainer}
+      style={isContactMap ? { width: '60%' } : {}}
+    >
+      {!isContactMap && (
+        <Typography className={styles.mapLabel}>
+          Выберите место доставки на карте
+        </Typography>
+      )}
       <YMaps>
         <Map
           defaultState={defaultState}

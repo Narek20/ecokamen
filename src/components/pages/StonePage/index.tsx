@@ -1,13 +1,14 @@
 import { Box } from '@mui/material';
-import CategoriesSidBar from '@/components/features/CategoriesSidebar';
+import SidBarComponent from '@/components/features/SidBarComponent';
 import StoneInformation from '@/components/features/StoneInformation';
+import { categories } from '@/utils/constants/sidebar';
 
 import styles from './styles.module.scss';
 
 const StonePage = () => {
   return (
     <Box className={styles.stonePage}>
-      <CategoriesSidBar />
+      <SidBarComponent categories={categories} />
       <StoneInformation />
     </Box>
   );

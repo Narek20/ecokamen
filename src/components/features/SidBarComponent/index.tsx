@@ -1,10 +1,14 @@
+import { FC } from 'react';
 import Link from 'next/link';
 import { Box } from '@mui/material';
-import { categories } from '@/utils/constants/sidebar';
 
 import styles from './styles.module.scss';
 
-const CategoriesSidBar = () => {
+interface IProps {
+  categories: { title: string; imageHref: string; link: string }[];
+}
+
+const SidBarComponent: FC<IProps> = ({ categories }) => {
   return (
     <Box className={styles.categories}>
       {categories.map(({ link, title }) => (
@@ -16,4 +20,4 @@ const CategoriesSidBar = () => {
   );
 };
 
-export default CategoriesSidBar;
+export default SidBarComponent;

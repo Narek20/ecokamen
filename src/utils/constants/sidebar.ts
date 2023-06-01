@@ -85,3 +85,27 @@ export const profileSidebar = [
     title: 'История заказов',
   },
 ];
+
+export const aboutUsSidebar = [
+  {
+    link: '/about-us/',
+    title: 'О компании',
+    imageHref: '',
+  },
+  {
+    link: '/about-us/politics',
+    title: 'Политика',
+    imageHref: '',
+  },
+  {
+    link: '/about-us/licenses',
+    title: 'Лицензии',
+    imageHref: '',
+  },
+  {
+    link: '/about-us/contacts',
+    title: 'Контакты',
+    imageHref: '',
+  },
+
+];

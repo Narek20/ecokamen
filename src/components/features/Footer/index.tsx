@@ -62,13 +62,10 @@ const Footer = () => {
         <Box className={styles.infoSections}>
           <Typography className={styles.sectionTitle}>Компания</Typography>
           <Link className={styles.sectionElem} href="/about-us">
-            О нас
+            О компании
           </Link>
-          <Link className={styles.sectionElem} href="/contact-us">
+          <Link className={styles.sectionElem} href="/about-us/contacts">
             Связь
-          </Link>
-          <Link className={styles.sectionElem} href="/about-us">
-            mi ban
           </Link>
         </Box>
         <Box className={styles.infoSections}>

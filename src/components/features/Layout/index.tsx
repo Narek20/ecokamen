@@ -1,8 +1,9 @@
 import { FC, ReactNode } from 'react';
 import { Box } from '@material-ui/core';
 import Header from '../Header';
-import SearchBar from '../SearchBar';
 import Footer from '../Footer';
+import SearchBar from '../SearchBar';
+import BreadCrumbsComponent from '../BreadCrumbsComponent';
 
 import styles from './styles.module.scss';
 
@@ -15,6 +16,7 @@ const Layout: FC<IProps> = ({ children }) => {
     <Box className={styles.layout}>
       <Header />
       <SearchBar />
+      <BreadCrumbsComponent />
       {children}
       <Box className={styles.divider}></Box>
       <Footer />
