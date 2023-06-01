@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import { Box, Button, TextField, Typography } from '@mui/material';
 import { Link as SocialLink } from '@material-ui/core';
@@ -5,10 +6,23 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import { useToast } from '@/contexts/toast.context';
+import { subscribeForNews } from '@/services/user.service';
 
 import styles from './styles.module.scss';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+
+  const { showToast } = useToast();
+
+  const handleSubscribe = async () => {
+    const data = await subscribeForNews(email);
+    if (data.success) {
+      showToast('success', data.message);
+    }
+  };
+  
   return (
     <Box className={styles.footer}>
       <Box className={styles.header}>
@@ -24,8 +38,11 @@ const Footer = () => {
               className={styles.emailInp}
               label="Электронная почта"
               variant="outlined"
+              onChange={(evt) => setEmail(evt.target.value)}
             />
-            <Button className={styles.sendBtn}>Отправить</Button>
+            <Button className={styles.sendBtn} onClick={handleSubscribe}>
+              Отправить
+            </Button>
           </Box>
         </Box>
       </Box>

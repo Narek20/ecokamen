@@ -1,9 +1,9 @@
-import { SearchIcon } from '@mui/icons-material/Search';
 export const userEndpoints = {
   LOGIN: 'users/login',
   REGISTER: 'users/register',
   GET_USER: 'users/',
   UPDATE_USER: 'users/',
+  SUBSCRIBE_FOR_NEWS: 'email/subscribe/'
 };
 
 export const orderEndpoints = {

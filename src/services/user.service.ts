@@ -35,3 +35,18 @@ export const updateUser = async (
     };
   }
 };
+
+export const subscribeForNews = async (email: string): Promise<IResponse> => {
+  try {
+    const data = await axiosInstance.post(userEndpoints.SUBSCRIBE_FOR_NEWS, {
+      email,
+    });
+
+    return data.data;
+  } catch (err: any) {
+    return {
+      success: false,
+      message: err.message,
+    };
+  }
+};
