@@ -1,13 +1,14 @@
 import { Box } from '@mui/material';
 import StonesList from '@/components/features/StonesList';
-import CategoriesSidBar from '@/components/features/CategoriesSidebar';
+import SidBarComponent from '@/components/features/SidBarComponent';
+import { categories } from '@/utils/constants/sidebar';
 
 import styles from './styles.module.scss';
 
 const CategoryComponent = () => {
   return (
     <Box className={styles.content}>
-      <CategoriesSidBar />
+      <SidBarComponent categories={categories}/>
       <Box className={styles.lists}>
         <StonesList />
       </Box>

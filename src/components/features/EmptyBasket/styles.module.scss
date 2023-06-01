@@ -1,0 +1,23 @@
+.emptyBasket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+
+  .basketEmptyText {
+    color: black;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  .hintText {
+    color: black;
+    font-size: 18px;
+
+    .link {
+      color: orangered;
+      font-size: 18px;
+    }
+  }
+}

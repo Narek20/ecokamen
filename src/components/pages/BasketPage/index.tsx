@@ -9,6 +9,7 @@ import { removeAllBasketItems } from '@/services/basket.service';
 import { IBasket } from '@/types/basket.types';
 
 import styles from './styles.module.scss';
+import EmptyBasket from '@/components/features/EmptyBasket';
 
 const BasketPage = () => {
   const { count, basketItems, refetchItems } = useContext(BasketContext);
@@ -69,11 +70,15 @@ const BasketPage = () => {
           </Button>
         </Box>
       </Box>
-      <Box className={styles.itemsList}>
-        {filteredItems.map((basketItem: IBasket) => (
-          <BasketItemCard key={basketItem.title} {...basketItem} />
-        ))}
-      </Box>
+      {basketItems.length ? (
+        <Box className={styles.itemsList}>
+          {filteredItems.map((basketItem: IBasket) => (
+            <BasketItemCard key={basketItem.title} {...basketItem} />
+          ))}
+        </Box>
+      ) : (
+        <EmptyBasket />
+      )}
     </Box>
   );
 };

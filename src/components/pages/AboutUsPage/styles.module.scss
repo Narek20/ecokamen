@@ -1,0 +1,45 @@
+.aboutUsPage {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .content {
+    width: 100%;
+    padding: 0px 20px;
+
+    .title {
+      color :black;
+      font-size: 30px;
+      margin-bottom: 50px;
+    }
+
+    .listItem {
+      color: black;
+      margin-left: 10px;
+    }
+
+    .simpleText {
+      color: black;
+      margin-top: 20px;
+    }
+
+    .titleText {
+      color: black;
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 25px;
+    }
+
+    .strongText {
+      font-weight: 600;
+      color: black;
+      margin-top: 20px;
+    }
+
+    .bigText {
+      font-size: 20px;
+      color: black;
+      margin-top: 20px;
+    }
+  }
+}
