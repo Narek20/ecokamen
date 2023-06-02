@@ -1,11 +1,11 @@
-.emptyBasket {
+.EmptyPage {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 50px;
 
-  .basketEmptyText {
+  .emptyText {
     color: black;
     font-size: 18px;
     margin-top: 20px;
