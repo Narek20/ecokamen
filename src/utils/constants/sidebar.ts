@@ -69,19 +69,15 @@ export const categories = [
 
 export const profileSidebar = [
   {
-    link: '/profile/',
-    title: 'Личный Кабинет',
-  },
-  {
-    link: '/profile/personal',
+    link: '/personal',
     title: 'Личные Данные',
   },
   {
-    link: '/profile/current-orders',
+    link: '/current-orders',
     title: 'Текущие заказы',
   },
   {
-    link: '/profile/orders-history',
+    link: '/orders-history',
     title: 'История заказов',
   },
 ];
