@@ -7,6 +7,7 @@ import { AuthContext } from '@/contexts/auth.context';
 import ProfilePicture from '../ProfilePicture';
 
 import styles from './styles.module.scss';
+import Link from 'next/link';
 
 const Header = () => {
   const { isLoggedIn } = useContext(AuthContext);
@@ -18,7 +19,11 @@ const Header = () => {
 
   return (
     <Box className={styles.header}>
-      <Box className={styles.leftSections}></Box>
+      <Box className={styles.leftSections}>
+        <Link className={styles.link} href="/about-us">О компании</Link>
+        <Link className={styles.link} href="/about-us/contacts">Контакты</Link>
+        <Link className={styles.link} href=""></Link>
+      </Box>
       <Box className={styles.rightSections}>
         <CallOutlinedIcon sx={{ color: 'black' }} />
         <Typography className={styles.phoneNumber}>

@@ -3,7 +3,7 @@ import { Box, IconButton } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ArticleIcon from '@mui/icons-material/Article';
 import HistoryIcon from '@mui/icons-material/History';
-import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
+import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Drawer from '@/components/shared/Drawers';
 import { AuthContext } from '@/contexts/auth.context';
@@ -13,23 +13,18 @@ import styles from './styles.module.scss';
 
 const ProfileSidebarItems = [
   {
-    title: 'Мой кабинет',
-    link: '/profile',
-    icon: <AccountCircleIcon />,
-  },
-  {
     title: 'Текущие заказы',
-    link: '/profile/current-orders',
-    icon: <MeetingRoomIcon />,
+    link: '/current-orders',
+    icon: <ReceiptLongIcon />,
   },
   {
     title: 'Личные данные',
-    link: '/profile/personal',
+    link: '/personal',
     icon: <ArticleIcon />,
   },
   {
     title: 'История заказов',
-    link: '/profile/orders-history',
+    link: '/orders-history',
     icon: <HistoryIcon />,
   },
   {

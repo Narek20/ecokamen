@@ -7,6 +7,12 @@
 
   .leftSections {
     display: flex;
+
+    .link {
+      color: rgb(64, 64, 64);
+      margin-left: 10px;
+      font-size: 14px;
+    }
   }
 
   .rightSections {
