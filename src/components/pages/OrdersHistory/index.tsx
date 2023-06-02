@@ -1,16 +1,15 @@
 import { useContext, useEffect, useState } from 'react';
-import { Box } from '@material-ui/core';
-import ProfileSidebar from '@/components/features/ProfileSidebar';
+import { Box, Typography } from '@mui/material';
+import EmptyPage from '@/components/features/EmptyPage';
+import OrderCard from '@/components/features/OrderCard';
 import { AuthContext } from '@/contexts/auth.context';
 import { getOrdersHistory } from '@/services/order.service';
 import { IOrder } from '@/types/order.types';
 
 import styles from './styles.module.scss';
-import OrderCard from '@/components/features/OrderCard';
-import { IStone } from '@/types/stone.types';
 
 const OrdersHistoryPage = () => {
-  const [orders, setOrders] = useState<Array<IOrder & IStone> | []>([]);
+  const [orders, setOrders] = useState<Array<IOrder> | []>([]);
 
   const { userData } = useContext(AuthContext);
 
@@ -28,18 +27,25 @@ const OrdersHistoryPage = () => {
     getOrders();
   }, [userData._id]);
 
-  return (
-    <Box>
-      <ProfileSidebar />
-      <Box>
-        {orders.map((order) => (
-          <OrderCard
-            key={order.quantity + Math.random()}
-            {...order}
-            imageHref={order.imageHrefs[0]}
-          />
-        ))}
+  if (!orders.length) {
+    return (
+      <Box className={styles.ordersHistory}>
+        <Box style={{ width: '100%' }}>
+          <Typography className={styles.title}>История заказов</Typography>
+        </Box>
+        <EmptyPage type="ordersHistory" />
       </Box>
+    );
+  }
+
+  return (
+    <Box className={styles.ordersHistory}>
+      <Box style={{ width: '100%' }}>
+        <Typography className={styles.title}>История заказов</Typography>
+      </Box>
+      {orders.map((order) => (
+        <OrderCard key={order.quantity + Math.random()} {...order} />
+      ))}
     </Box>
   );
 };

@@ -1,52 +1,47 @@
 import { FC } from 'react';
 import { Box, Typography } from '@mui/material';
-import { IBasket } from '@/types/basket.types';
+import { dateFormatter } from '@/utils/functions/dateFormatter';
+import { IOrder } from '@/types/order.types';
 
 import styles from './styles.module.scss';
 
-interface IProps {
-  title: string;
-  imageHref: string;
-  price: string;
-  thickness: string;
-  quantity: number;
-}
-
-const OrderCard: FC<IProps> = ({
-  title,
-  imageHref,
+const OrderCard: FC<IOrder> = ({
+  createdAt,
+  stoneIds,
   price,
-  thickness,
-  quantity,
+  deliveryPrice,
+  paymentType,
 }) => {
   return (
     <Box className={styles.card}>
-      <img className={styles.stoneImage} src={imageHref} />
-      <Box className={styles.stoneDetails}>
-        <Typography className={styles.title}>{title}</Typography>
-        <Box className={styles.stoneInfo}>
-          <Box>
-            <Box className={styles.infoContainer}>
-              <Typography className={styles.infoLabel}>Толщина:</Typography>
-              <Typography className={styles.info}>{thickness}мм</Typography>
-            </Box>
-            <Box className={styles.infoContainer}>
-              <Typography className={styles.infoLabel}>
-                цена за 1 м<sup>2</sup>:
-              </Typography>
-              <Typography className={styles.info}>{price}руб</Typography>
-            </Box>
-            <Box className={styles.infoContainer}>
-              <Typography className={styles.infoLabel}>Количество:</Typography>
-              <Typography className={styles.info}>{quantity}</Typography>
-            </Box>
-          </Box>
-          <Box className={styles.purchaseInfo}>
-            <Typography className={styles.totalPrice}>
-              {+quantity * +price}руб
-            </Typography>
-          </Box>
-        </Box>
+      <Box className={styles.header}>
+        <Typography className={styles.orderDetails}>
+          Заказ от {dateFormatter(createdAt)}, товаров {stoneIds.length}. Общая
+          сумма {+price + +deliveryPrice}
+        </Typography>
+      </Box>
+      <Box className={styles.details}>
+        <Typography className={styles.detailTitle}>Оплата</Typography>
+        <Typography className={styles.purchasePrice}>
+          Сумма к оплате {price}
+        </Typography>
+        <Typography className={styles.purchaseType}>
+          Способ оплаты{' '}
+          {paymentType === 'sberbank'
+            ? 'Сбербанк'
+            : paymentType === 'bank card'
+            ? 'банковская карта'
+            : 'Наличными'}
+        </Typography>
+      </Box>
+      <Box className={styles.details}>
+        <Typography className={styles.detailTitle}>Доставка</Typography>
+        <Typography className={styles.purchasePrice}>
+          Сумма доставки {deliveryPrice}
+        </Typography>
+        <Typography className={styles.purchaseType}>
+          Способ доставки {deliveryPrice == 0 ? 'Самовызов' : 'Наша доставка'}
+        </Typography>
       </Box>
     </Box>
   );

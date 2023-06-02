@@ -1,20 +1,19 @@
 import { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { Typography, Box } from '@mui/material';
-import { Button } from '@material-ui/core';
+import { Button, Box } from '@mui/material';
 import Payment from '@/components/features/Order/Payment';
 import Delivery from '@/components/features/Order/Delivery';
 import BuyerInfo from '@/components/features/Order/BuyerInfo';
 import OrderItems from '@/components/features/Order/OrderItems';
 import StepperComponent from '@/components/features/Stepper';
 import { useToast } from '@/contexts/toast.context';
+import { AuthContext } from '@/contexts/auth.context';
+import { BasketContext } from '@/contexts/basket.context';
+import { placeOrder } from '@/services/order.service';
+import { IBasket } from '@/types/basket.types';
 import { IOrderDetails, OrderDetails } from '@/types/order.types';
 
 import styles from './styles.module.scss';
-import { placeOrder } from '@/services/order.service';
-import { AuthContext } from '@/contexts/auth.context';
-import { BasketContext } from '@/contexts/basket.context';
-import { IBasket } from '@/types/basket.types';
 
 const OrderComponents = [
   { component: BuyerInfo },
