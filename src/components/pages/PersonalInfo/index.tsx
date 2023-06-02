@@ -1,6 +1,6 @@
-import { useState, ChangeEvent } from 'react';
-import { Box, Button, TextField } from '@material-ui/core';
-import ProfileSidebar from '@/components/features/ProfileSidebar';
+import { useState, ChangeEvent, useContext } from 'react';
+import { Box, Button, TextField, Typography } from '@mui/material';
+import { AuthContext } from '@/contexts/auth.context';
 
 import styles from './styles.module.scss';
 
@@ -10,6 +10,8 @@ const PersonalInfoPage = () => {
     email: '',
     phone: '',
   });
+
+  const { userData } = useContext(AuthContext);
 
   const handleChange = (
     event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
@@ -21,17 +23,18 @@ const PersonalInfoPage = () => {
     });
   };
 
-  const handleSave = () => {
-    
-  }
+  const handleSave = () => {};
 
   return (
     <Box className={styles.personalInfo}>
-      <ProfileSidebar />
+      <Box style={{ width: '100%' }}>
+        <Typography className={styles.title}>Персональные данные</Typography>
+      </Box>
       <Box className={styles.form}>
         <Box className={styles.inputContainer}>
           <TextField
             className={styles.input}
+            defaultValue={`${userData.surname} ${userData.name} ${userData.patronymic}`}
             label="Фамилия Имя Отчество*"
             onChange={(evt) => handleChange(evt, 'fullName')}
           />
@@ -39,6 +42,7 @@ const PersonalInfoPage = () => {
         <Box className={styles.inputContainer}>
           <TextField
             className={styles.input}
+            defaultValue={userData.email}
             label="E-mail*"
             onChange={(evt) => handleChange(evt, 'email')}
           />
@@ -46,11 +50,14 @@ const PersonalInfoPage = () => {
         <Box className={styles.inputContainer}>
           <TextField
             className={styles.input}
+            defaultValue={userData.phone}
             label="Телефон*"
             onChange={(evt) => handleChange(evt, 'phone')}
           />
         </Box>
-        <Button className={styles.saveBtn} onClick={handleSave}>Сохранить изменения</Button>
+        <Button className={styles.saveBtn} onClick={handleSave}>
+          Сохранить изменения
+        </Button>
       </Box>
     </Box>
   );

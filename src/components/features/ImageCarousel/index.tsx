@@ -2,8 +2,7 @@ import {
   FC,
   cloneElement,
 } from 'react';
-import Image from 'next/image';
-import { Box } from '@material-ui/core';
+import { Box } from '@mui/material';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 

@@ -1,13 +1,8 @@
 import { FC } from 'react';
 import {
   Box,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableRow,
   Typography,
-} from '@material-ui/core';
+} from '@mui/material';
 import { IStone } from '@/types/stone.types';
 
 import styles from './styles.module.scss';

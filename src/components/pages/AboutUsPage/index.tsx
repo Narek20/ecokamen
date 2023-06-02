@@ -1,10 +1,9 @@
-import { Box, Typography } from '@material-ui/core';
+import { List, ListItem, Box, Typography } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
 import SidBarComponent from '@/components/features/SidBarComponent';
 import { aboutUsSidebar } from '@/utils/constants/sidebar';
 
 import styles from './styles.module.scss';
-import { List, ListItem } from '@mui/material';
 
 const AboutUsPage = () => {
   return (

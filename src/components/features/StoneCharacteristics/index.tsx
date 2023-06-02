@@ -7,7 +7,7 @@ import {
   TableContainer,
   TableRow,
   Typography,
-} from '@material-ui/core';
+} from '@mui/material';
 
 import styles from './styles.module.scss';
 import { IStone } from '@/types/stone.types';

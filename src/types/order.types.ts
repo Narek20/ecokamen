@@ -11,6 +11,7 @@ export interface IOrder {
   buyerEmail: string;
   buyerPhone: string;
   buyerAddress: string;
+  createdAt: string;
 }
 
 export enum OrderDetails {

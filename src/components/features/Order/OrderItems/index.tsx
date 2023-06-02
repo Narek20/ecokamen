@@ -1,11 +1,10 @@
 import { FC, useContext } from 'react';
 import { Box } from '@mui/material';
+import { BasketContext } from '@/contexts/basket.context';
+import PurchaseOrderCard from '../../PurchaseOrderCard';
+import { IBasket } from '@/types/basket.types';
 
 import styles from './styles.module.scss';
-import { TextField } from '@material-ui/core';
-import { BasketContext } from '@/contexts/basket.context';
-import { IBasket } from '@/types/basket.types';
-import OrderCard from '../../OrderCard';
 
 interface IProps {}
 
@@ -15,7 +14,7 @@ const OrderItems: FC<IProps> = ({}) => {
   return (
     <Box>
       {basketItems.map((item: IBasket) => (
-        <OrderCard key={item.title} {...item} />
+        <PurchaseOrderCard key={item.title} {...item} />
       ))}
     </Box>
   );

@@ -1,5 +1,5 @@
-import { FC, useState } from 'react';
-import { Box, Step, StepButton, Stepper, Typography } from '@material-ui/core';
+import { FC } from 'react';
+import { Step, StepButton, Stepper, Typography } from '@mui/material';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';

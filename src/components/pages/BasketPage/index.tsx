@@ -9,7 +9,7 @@ import { removeAllBasketItems } from '@/services/basket.service';
 import { IBasket } from '@/types/basket.types';
 
 import styles from './styles.module.scss';
-import EmptyBasket from '@/components/features/EmptyBasket';
+import EmptyBasket from '@/components/features/EmptyPage';
 
 const BasketPage = () => {
   const { count, basketItems, refetchItems } = useContext(BasketContext);
@@ -77,7 +77,7 @@ const BasketPage = () => {
           ))}
         </Box>
       ) : (
-        <EmptyBasket />
+        <EmptyBasket type="basket"/>
       )}
     </Box>
   );
