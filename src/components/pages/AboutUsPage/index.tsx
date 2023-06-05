@@ -1,6 +1,6 @@
 import { List, ListItem, Box, Typography } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
-import SidBarComponent from '@/components/features/SidbarComponent';
+import SidebarComponent from '@/components/features/SidbarComponent';
 import { aboutUsSidebar } from '@/utils/constants/sidebar';
 
 import styles from './styles.module.scss';
@@ -8,7 +8,7 @@ import styles from './styles.module.scss';
 const AboutUsPage = () => {
   return (
     <Box className={styles.aboutUsPage}>
-      <SidBarComponent categories={aboutUsSidebar} />
+      <SidebarComponent categories={aboutUsSidebar} />
       <Box className={styles.content}>
         <Typography className={styles.title}>О компании</Typography>
         <Typography className={styles.simpleText}>

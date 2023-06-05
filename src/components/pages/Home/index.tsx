@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import CategoriesList from '@/components/features/CategoriesList';
-import SidBarComponent from '@/components/features/SidbarComponent';
+import SidebarComponent from '@/components/features/SidbarComponent';
 import { categories } from '@/utils/constants/sidebar';
 
 import styles from './styles.module.scss';
@@ -8,7 +8,7 @@ import styles from './styles.module.scss';
 const HomeComponent = () => {
   return (
     <Box className={styles.content}>
-      <SidBarComponent categories={categories} />
+      <SidebarComponent categories={categories} />
       <Box className={styles.lists}>
         <CategoriesList />
       </Box>

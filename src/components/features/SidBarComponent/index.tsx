@@ -9,7 +9,7 @@ interface IProps {
   categories: { title: string; imageHref: string; link: string }[];
 }
 
-const SidBarComponent: FC<IProps> = ({ categories }) => {
+const SidebarComponent: FC<IProps> = ({ categories }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
 
@@ -36,4 +36,4 @@ const SidBarComponent: FC<IProps> = ({ categories }) => {
   );
 };
 
-export default SidBarComponent;
+export default SidebarComponent;
