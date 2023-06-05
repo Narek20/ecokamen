@@ -1,5 +1,12 @@
 import { FC } from 'react';
-import { Step, StepButton, Stepper, Typography } from '@mui/material';
+import {
+  Step,
+  StepButton,
+  Stepper,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
+import { useTheme } from '@material-ui/core';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
@@ -9,6 +16,7 @@ interface IProps {
   activeStep: number;
   completed: { [key: number]: boolean };
   onChange: (key: number) => void;
+  onClick: (index?: number) => void;
 }
 
 const steps = [
@@ -18,7 +26,15 @@ const steps = [
   { label: 'Покупка этих товаров', icon: ShoppingCartIcon },
 ];
 
-const StepperComponent: FC<IProps> = ({ activeStep, completed, onChange }) => {
+const StepperComponent: FC<IProps> = ({
+  activeStep,
+  completed,
+  onChange,
+  onClick,
+}) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Stepper
       nonLinear
@@ -31,6 +47,7 @@ const StepperComponent: FC<IProps> = ({ activeStep, completed, onChange }) => {
           key={step.label}
           completed={completed[index]}
           active={activeStep === index}
+          onClick={() => onClick(index)}
         >
           <StepButton
             icon={
@@ -48,17 +65,19 @@ const StepperComponent: FC<IProps> = ({ activeStep, completed, onChange }) => {
             }
             onClick={() => onChange(index)}
           >
-            <Typography
-              style={{
-                color: completed[index]
-                  ? 'green'
-                  : activeStep === index
-                  ? '#3f51b5'
-                  : 'black',
-              }}
-            >
-              {step.label}
-            </Typography>
+            {!isMobile && (
+              <Typography
+                style={{
+                  color: completed[index]
+                    ? 'green'
+                    : activeStep === index
+                    ? '#3f51b5'
+                    : 'black',
+                }}
+              >
+                {step.label}
+              </Typography>
+            )}
           </StepButton>
         </Step>
       ))}
