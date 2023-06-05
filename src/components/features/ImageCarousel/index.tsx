@@ -17,14 +17,6 @@ const ImageCarousel: FC<IProps> = ({ images }) => {
     <Carousel
       autoPlay
       className={styles.carousel}
-      renderThumbs={(children) =>
-        children.map(
-          (
-            item: any,
-            index
-          ) => cloneElement(item, { className: 'thumb' })
-        )
-      }
     >
       {images.map((image) => (
         <Box className={styles.carousel} key={image}>
