@@ -30,7 +30,7 @@
       margin-top: 20px;
 
       .emailInp {
-        width: 300px;
+        max-width: 300px;
         border: 1px solid;
       }
 
@@ -77,6 +77,43 @@
 
         .icon {
           margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .footer {
+    padding: 10px;
+
+    .header {
+      justify-content: center;
+      .title {
+        font-size: 18px;
+      }
+    }
+
+    .info {
+      .infoSections {
+        .sectionTitle {
+          font-weight: 700;
+          line-height: 24px;
+          font-size: 14px;
+          letter-spacing: 0px;
+          color: black;
+        }
+  
+        .sectionElem {
+          display: flex;
+          font-size: 12px;
+          margin-top: 10px;
+          color: black;
+          align-items: center;
+  
+          .icon {
+            margin-right: 10px;
+          }
         }
       }
     }

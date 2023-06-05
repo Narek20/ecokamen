@@ -1,7 +1,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { Box, Button, TextField, Typography } from '@mui/material';
-import { Link as SocialLink } from '@mui/material';
+import {
+  Box,
+  Button,
+  TextField,
+  Typography,
+  useMediaQuery,
+  Link as SocialLink,
+} from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -15,6 +22,8 @@ const Footer = () => {
   const [email, setEmail] = useState('');
 
   const { showToast } = useToast();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleSubscribe = async () => {
     const data = await subscribeForNews(email);
@@ -22,13 +31,15 @@ const Footer = () => {
       showToast('success', data.message);
     }
   };
-  
+
   return (
     <Box className={styles.footer}>
       <Box className={styles.header}>
-        <Typography className={styles.title}>
-          Приобретайте камни вместе с Ecokamen
-        </Typography>
+        {!isMobile && (
+          <Typography className={styles.title}>
+            Приобретайте камни вместе с Ecokamen
+          </Typography>
+        )}
         <Box>
           <Typography className={styles.hint}>
             Подписатся на обновления
@@ -48,17 +59,18 @@ const Footer = () => {
       </Box>
       <hr className={styles.line} />
       <Box className={styles.info}>
-        <Box className={styles.infoSections}>
-          <Typography className={styles.sectionTitle}>
-            О компанни Ecokamen
-          </Typography>
-          <Typography className={styles.sectionElem}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            dictum aliquet accumsan porta lectus ridiculus in mattis. Netus
-            sodales in volutpat ullamcorper amet adipiscing fermentum.
-          </Typography>
-          <Box></Box>
-        </Box>
+        {!isMobile && (
+          <Box className={styles.infoSections}>
+            <Typography className={styles.sectionTitle}>
+              О компанни Ecokamen
+            </Typography>
+            <Typography className={styles.sectionElem}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              dictum aliquet accumsan porta lectus ridiculus in mattis. Netus
+              sodales in volutpat ullamcorper amet adipiscing fermentum.
+            </Typography>
+          </Box>
+        )}
         <Box className={styles.infoSections}>
           <Typography className={styles.sectionTitle}>Компания</Typography>
           <Link className={styles.sectionElem} href="/about-us">
@@ -68,18 +80,21 @@ const Footer = () => {
             Связь
           </Link>
         </Box>
-        <Box className={styles.infoSections}>
-          <Typography className={styles.sectionTitle}>Покупателю</Typography>
-          <Link className={styles.sectionElem} href="/about-us">
-            Оплата
-          </Link>
-          <Link className={styles.sectionElem} href="/contact-us">
-            Доставка
-          </Link>
-          <Link className={styles.sectionElem} href="/about-us">
-            Гарантия на товар
-          </Link>
-        </Box>
+
+        {!isMobile && (
+          <Box className={styles.infoSections}>
+            <Typography className={styles.sectionTitle}>Покупателю</Typography>
+            <Link className={styles.sectionElem} href="/about-us">
+              Оплата
+            </Link>
+            <Link className={styles.sectionElem} href="/contact-us">
+              Доставка
+            </Link>
+            <Link className={styles.sectionElem} href="/about-us">
+              Гарантия на товар
+            </Link>
+          </Box>
+        )}
         <Box className={styles.infoSections}>
           <Typography className={styles.sectionTitle}>Наши Соцсети</Typography>
           <SocialLink className={styles.sectionElem} href="" target="blank">
