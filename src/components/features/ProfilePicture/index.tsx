@@ -8,14 +8,13 @@ import ProfileSidebarItem from '../ProfileSidebarItem';
 
 import styles from './styles.module.scss';
 
-
 const ProfilePicture = () => {
   const { logout } = useContext(AuthContext);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   return (
     <Box>
       <IconButton onClick={() => setIsDrawerOpen(true)}>
-        <AccountCircleIcon sx={{color: "black", width: 30, height: 30 }} />
+        <AccountCircleIcon sx={{ color: 'black', width: 30, height: 30 }} />
       </IconButton>
       <Drawer
         isOpen={isDrawerOpen}
@@ -26,6 +25,7 @@ const ProfilePicture = () => {
           <ProfileSidebarItem
             key={item.title}
             {...item}
+            icon={<item.icon />}
             handleClick={
               index === ProfileSidebarItems.length - 1 ? logout : undefined
             }

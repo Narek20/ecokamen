@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Typography } from '@mui/material';
 
 import styles from './styles.module.scss';
+import Image from 'next/image';
 
 interface IProps {
   title: string;
@@ -13,7 +14,7 @@ interface IProps {
 const CategoryCard: FC<IProps> = ({ title, imageHref, link }) => {
   return (
     <Link className={styles.card} href={link}>
-      <img className={styles.img} src={imageHref} alt="category" />
+      <Image width={100} height={100} src={imageHref} alt="category" />
       <Typography className={styles.title}>{title}</Typography>
     </Link>
   );
