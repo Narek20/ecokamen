@@ -1,8 +1,4 @@
-import {
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import SearchIcon from '@mui/icons-material/Search';
@@ -32,15 +28,15 @@ const SearchBar = () => {
   useEffect(() => {
     if (textFieldRef.current) {
       const handleFocus = (evt: Event) => {
-        evt.stopPropagation()
-        evt.preventDefault()
+        evt.stopPropagation();
+        evt.preventDefault();
         setIsFocused(true);
       };
-      
+
       const handleBlur = () => {
         setIsFocused(false);
       };
-      document.body.addEventListener("click", handleBlur)
+      document.body.addEventListener('click', handleBlur);
 
       const inputElement = textFieldRef.current.querySelector('input');
 
@@ -86,12 +82,8 @@ const SearchBar = () => {
         />
         {isFocused &&
           searchItems.map((searchItem: IStone) => (
-            <Link href={"/category/" + searchItem.link} >
-              <MenuItem
-                className={styles.menuItem}
-                key={searchItem.title}
-                value={searchItem.title}
-              >
+            <Link key={searchItem.title} href={'/category/' + searchItem.link}>
+              <MenuItem className={styles.menuItem} value={searchItem.title}>
                 {searchItem.title}
               </MenuItem>
             </Link>

@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { Box, Typography, Button } from '@mui/material';
 import Image from 'next/image';
-import BankCardsImg from '@/assets/Images/bankcards.png';
+import { Box, Typography, Button } from '@mui/material';
+import { imageUrls } from '@/utils/constants/imageUrls';
 
 import styles from './styles.module.scss';
 
@@ -13,7 +13,12 @@ const YandexPayment: FC<IProps> = ({ price }) => {
   return (
     <Box className={styles.yandexPayment}>
       <Box className={styles.paymentVariant}>
-        <Image src={BankCardsImg} width={100} height={80} alt="sberbank" />
+        <Image
+          src={imageUrls.bankCards}
+          width={100}
+          height={80}
+          alt="bankCards"
+        />
         <Typography className={styles.variantTitle}>
           Банковской картой
         </Typography>

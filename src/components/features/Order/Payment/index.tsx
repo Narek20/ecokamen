@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Box, Typography } from '@mui/material';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import SberbankLogo from '@/assets/Images/sberbank.png';
+import { imageUrls } from '@/utils/constants/imageUrls';
 import { OrderDetails, PaymentTypes } from '@/types/order.types';
 
 import styles from './styles.module.scss';
@@ -65,7 +65,12 @@ const Payment: FC<IProps> = ({ paymentVariant, handleChange }) => {
               : {}
           }
         >
-          <Image src={SberbankLogo} width={130} height={30} alt="sberbank" />
+          <Image
+            src={imageUrls.sberbank}
+            width={130}
+            height={30}
+            alt="sberbank"
+          />
         </Box>
       </Box>
     </Box>
