@@ -1,6 +1,6 @@
 import { List, ListItem, Box, Typography } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
-import SidebarComponent from '@/components/features/SidbarComponent';
+import SidebarComponent from '@/components/features/SidebarComponent';
 import { aboutUsSidebar } from '@/utils/constants/sidebar';
 
 import styles from './styles.module.scss';

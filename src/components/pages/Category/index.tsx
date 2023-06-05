@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import StonesList from '@/components/features/StonesList';
-import SidebarComponent from '@/components/features/SidbarComponent';
+import SidebarComponent from '@/components/features/SidebarComponent';
 import { categories } from '@/utils/constants/sidebar';
 
 import styles from './styles.module.scss';
