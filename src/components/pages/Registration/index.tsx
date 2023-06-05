@@ -63,6 +63,7 @@ const RegistrationComponent = () => {
         <Box className={styles.inputs}>
           {UserInfoFields.map((field) => (
             <TextField
+              key={field.key}
               className={styles.input}
               id="outlined-password-input"
               label={field.title}

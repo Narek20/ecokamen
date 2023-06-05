@@ -145,6 +145,7 @@ const OrderPage = () => {
             <>
               {index === activeStep && (
                 <orderComponent.component
+                key={index}
                   handleChange={handleChange}
                   orderDetails={orderDetails}
                   deliveryVariant={orderDetails.deliveryDetails}
