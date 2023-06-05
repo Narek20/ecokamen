@@ -1,6 +1,9 @@
 import { useState, ChangeEvent, useContext } from 'react';
+import { useRouter } from 'next/router';
 import { Box, Button, TextField, Typography } from '@mui/material';
+import { useToast } from '@/contexts/toast.context';
 import { AuthContext } from '@/contexts/auth.context';
+import { updateUser } from '@/services/user.service';
 
 import styles from './styles.module.scss';
 
@@ -12,6 +15,8 @@ const PersonalInfoPage = () => {
   });
 
   const { userData } = useContext(AuthContext);
+  const { showToast } = useToast();
+  const router = useRouter();
 
   const handleChange = (
     event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
@@ -23,7 +28,14 @@ const PersonalInfoPage = () => {
     });
   };
 
-  const handleSave = () => {};
+  const handleSave = async () => {
+    const data = await updateUser(personalInfo, userData._id);
+
+    if (data.success) {
+      showToast('success', data.message);
+      router.push('/');
+    }
+  };
 
   return (
     <Box className={styles.personalInfo}>
