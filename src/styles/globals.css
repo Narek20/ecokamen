@@ -41,6 +41,12 @@
   --card-border-rgb: 131, 134, 135;
 }
 
+@media screen and (max-width: 1200px) {
+  :root {
+    padding: 0px;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

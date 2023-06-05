@@ -18,11 +18,19 @@
     color: black;
     font-size: 22px;
     margin-top: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid gray;
   }
 
   .advantages {
     color: rgb(70, 69, 69);
     line-height: 25px;
     font-weight: 300;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .details {
+    margin-top: 50px;
   }
 }

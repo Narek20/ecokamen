@@ -1,19 +1,22 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { Box, Skeleton, Typography } from '@mui/material';
+import { Box, Skeleton, Typography, useMediaQuery } from '@mui/material';
+import { useTheme } from '@material-ui/core';
 import StonePurchase from '../StonePurchase';
 import ImageCarousel from '../ImageCarousel';
+import StoneDetails from '../StoneDetails';
+import StoneCharacteristics from '../StoneCharacteristics';
 import { getStoneByName } from '@/services/stone.service';
 import { IStone } from '@/types/stone.types';
 
 import styles from './styles.module.scss';
-import StoneCharacteristics from '../StoneCharacteristics';
-import StoneDetails from '../StoneDetails';
 
 const StoneInformation = () => {
   const [stoneData, setStoneData] = useState<IStone | null>(null);
 
   const router = useRouter();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
   const { stone } = router.query;
 
   const getStone = async () => {
@@ -32,10 +35,15 @@ const StoneInformation = () => {
 
   return (
     <Box className={styles.container}>
+      {isMobile && (
+        <Typography className={styles.title}>{stoneData.title}</Typography>
+      )}
       <Box className={styles.stoneInfo}>
         <ImageCarousel images={stoneData.imageHrefs} />
-        <Box>
-          <Typography className={styles.title}>{stoneData.title}</Typography>
+        <Box className={styles.stonePriceAndPurchase}>
+          {!isMobile && (
+            <Typography className={styles.title}>{stoneData.title}</Typography>
+          )}
           <Typography className={styles.priceLabel}>
             Цена:{' '}
             <Typography className={styles.price}>

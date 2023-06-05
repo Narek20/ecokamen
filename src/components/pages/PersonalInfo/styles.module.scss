@@ -1,11 +1,19 @@
 .personalInfo {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 
-  .title {
-    color: black;
-    font-size: 25px;
-    margin-bottom: 20px;
-    font-weight: 700;
+  .header {
+    width: 100%;
+
+    .title {
+      color: black;
+      font-size: 25px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
   }
 
   .form {
@@ -29,6 +37,23 @@
     .saveBtn {
       width: 250px;
       margin-top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .personalInfo {
+    .header {
+      width: fit-content;
+    }
+
+    .form {
+      .inputContainer {
+        .input {
+          width: 100%;
+          margin: 5px 0px;
+        }
+      }
     }
   }
 }

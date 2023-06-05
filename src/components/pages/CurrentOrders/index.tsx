@@ -30,7 +30,7 @@ const CurrentOrdersPage = () => {
   if (!orders.length) {
     return (
       <Box className={styles.currentOrders}>
-        <Box style={{ width: '100%' }}>
+        <Box className={styles.header}>
           <Typography className={styles.title}>Текущие заказы</Typography>
         </Box>
         <EmptyPage type="currentOrders" />
@@ -40,7 +40,7 @@ const CurrentOrdersPage = () => {
 
   return (
     <Box className={styles.currentOrders}>
-      <Box style={{ width: '100%' }}>
+      <Box className={styles.header}>
         <Typography className={styles.title}>Текущие заказы</Typography>
       </Box>
       {orders.map((order) => (

@@ -27,7 +27,7 @@ const PersonalInfoPage = () => {
 
   return (
     <Box className={styles.personalInfo}>
-      <Box style={{ width: '100%' }}>
+      <Box className={styles.header}>
         <Typography className={styles.title}>Персональные данные</Typography>
       </Box>
       <Box className={styles.form}>
