@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Typography } from '@mui/material';
 
 import styles from './styles.module.scss';
-import Image from 'next/image';
 
 interface IProps {
   title: string;
