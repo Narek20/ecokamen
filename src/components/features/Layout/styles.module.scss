@@ -7,3 +7,12 @@
     height: 100px;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .layout {  
+    .divider {
+      width: 100%;
+      height: 40px;
+    }
+  }
+}

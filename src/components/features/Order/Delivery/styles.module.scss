@@ -1,6 +1,10 @@
 .deliveryDetails {
-  width: 30%;
+  width: 50%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   .title {
     font-size: 25px;
@@ -11,6 +15,7 @@
   .variantsContainer {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 
     .deliveryVariant {
       width: 200px;
@@ -41,6 +46,16 @@
 
     .deliveryVariant:hover {
       box-shadow: 0px 3px 10px 1px #2075de;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .deliveryDetails {
+    .variantsContainer {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
     }
   }
 }

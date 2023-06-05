@@ -1,6 +1,9 @@
 .paymentDetails {
-  width: 50%;
   text-align: center;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .title {
     font-size: 25px;
@@ -11,6 +14,7 @@
   .variantsContainer {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 
     .paymentVariant {
       width: 200px;
@@ -19,7 +23,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      // border: 1px solid gray;
       border-radius: 10px;
       cursor: pointer;
 
@@ -45,3 +48,13 @@
     }
   }
 }
+
+@media screen and (max-width: 900px) {
+  .paymentDetails {
+    .variantsContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+

@@ -3,6 +3,7 @@
   height: 60px;
   display: flex;
   margin-bottom: 100px;
+  padding-right: 20px;
 
   .logoContainer {
     color: black;
@@ -26,5 +27,11 @@
       background-color: #f0f5f5;
       color: black;
     }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .searchContainer {
+    margin-bottom: 40px;
   }
 }
