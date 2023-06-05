@@ -52,10 +52,12 @@ const LoginComponent = () => {
     <Box className={styles.login}>
       <Box className={styles.content}>
         <Box className={styles.header}>
-          <IconButton onClick={handleClick}>
+          <IconButton className={styles.iconButton} onClick={handleClick}>
             <ArrowBackIcon />
           </IconButton>
-          <Typography className={styles.title}>Вход</Typography>
+          <Box className={styles.headerContent}>
+            <Typography className={styles.title}>Вход</Typography>
+          </Box>
         </Box>
         <Box className={styles.inputs}>
           <TextField

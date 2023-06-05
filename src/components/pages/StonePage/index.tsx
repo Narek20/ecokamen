@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import SidBarComponent from '@/components/features/SidBarComponent';
+import SidBarComponent from '@/components/features/SidbarComponent';
 import StoneInformation from '@/components/features/StoneInformation';
 import { categories } from '@/utils/constants/sidebar';
 

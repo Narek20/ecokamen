@@ -53,10 +53,12 @@ const RegistrationComponent = () => {
     <Box className={styles.registration}>
       <Box className={styles.content}>
         <Box className={styles.header}>
-          <Typography className={styles.title}>Регистрация</Typography>
-          <IconButton onClick={handleClick}>
+          <IconButton className={styles.iconButton} onClick={handleClick}>
             <ArrowBackIcon />
           </IconButton>
+          <Box className={styles.headerContent}>
+            <Typography className={styles.title}>Регистрация</Typography>
+          </Box>
         </Box>
         <Box className={styles.inputs}>
           {UserInfoFields.map((field) => (

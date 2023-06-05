@@ -63,8 +63,10 @@ const OrderPage = () => {
     setOrderDetails({ ...orderDetails });
   };
 
-  const onClick = () => {
-    setActiveStep(activeStep + 1);
+  const onClick = (newStep?: number) => {
+    if (newStep !== undefined) setActiveStep(newStep);
+    else setActiveStep(activeStep + 1);
+
     const currentKey = Object.keys(orderDetails)[activeStep];
 
     if (
@@ -136,6 +138,7 @@ const OrderPage = () => {
           activeStep={activeStep}
           completed={completed}
           onChange={ChangeActiveStep}
+          onClick={onClick}
         />
         <Box className={styles.orderComponent}>
           {OrderComponents.map((orderComponent, index) => (
@@ -164,7 +167,7 @@ const OrderPage = () => {
         <Button
           className={activeStep === 3 ? styles.nextBtn : ''}
           variant="outlined"
-          onClick={activeStep === 3 ? handleOrder : onClick}
+          onClick={activeStep === 3 ? handleOrder : () => onClick()}
         >
           {activeStep === 3 ? 'Оформить заказ' : 'Следующий'}
         </Button>

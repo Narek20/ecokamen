@@ -1,28 +1,31 @@
 .container {
   width: 100%;
   padding: 0px 40px 100px;
+
   .stoneInfo {
     width: 100%;
     display: flex;
     justify-content: space-between;
 
-    .title {
-      color: black;
-      font-size: 25px;
-      margin-bottom: 30px;
-      border-bottom: 1px solid gray;
-    }
+    .stonePriceAndPurchase {
+      .title {
+        color: black;
+        font-size: 25px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid gray;
+      }
 
-    .priceLabel {
-      color: black;
-      display: flex;
-      align-items: center;
-      font-size: 21px;
-
-      .price {
-        color: rgb(253, 106, 14);
+      .priceLabel {
+        color: black;
+        display: flex;
+        align-items: center;
         font-size: 21px;
-        margin-left: 10px;
+
+        .price {
+          color: rgb(253, 106, 14);
+          font-size: 21px;
+          margin-left: 10px;
+        }
       }
     }
 
@@ -34,6 +37,53 @@
         width: 100%;
         display: flex;
         justify-content: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 0px 10px 100px;
+
+    .title {
+      color: black;
+      font-size: 25px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid gray;
+    }
+
+    .stoneInfo {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .stonePriceAndPurchase {
+
+        .priceLabel {
+          color: black;
+          display: flex;
+          align-items: center;
+          font-size: 21px;
+
+          .price {
+            color: rgb(253, 106, 14);
+            font-size: 21px;
+            margin-left: 10px;
+          }
+        }
+      }
+
+      .content {
+        width: 100%;
+        display: flex;
+
+        .stoneInfo {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
       }
     }
   }

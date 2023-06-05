@@ -30,7 +30,7 @@ const OrdersHistoryPage = () => {
   if (!orders.length) {
     return (
       <Box className={styles.ordersHistory}>
-        <Box style={{ width: '100%' }}>
+        <Box className={styles.header}>
           <Typography className={styles.title}>История заказов</Typography>
         </Box>
         <EmptyPage type="ordersHistory" />
@@ -40,7 +40,7 @@ const OrdersHistoryPage = () => {
 
   return (
     <Box className={styles.ordersHistory}>
-      <Box style={{ width: '100%' }}>
+      <Box className={styles.header}>
         <Typography className={styles.title}>История заказов</Typography>
       </Box>
       {orders.map((order) => (
