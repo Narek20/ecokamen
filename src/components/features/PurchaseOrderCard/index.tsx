@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Image from 'next/image';
 import { Box, Typography } from '@mui/material';
 
 import styles from './styles.module.scss';
@@ -20,7 +21,7 @@ const PurchaseOrderCard: FC<IProps> = ({
 }) => {
   return (
     <Box className={styles.card}>
-      <img className={styles.stoneImage} src={imageHref} />
+      <Image width={100} height={100} src={imageHref} alt="stoneImage" />
       <Box className={styles.stoneDetails}>
         <Typography className={styles.title}>{title}</Typography>
         <Box className={styles.stoneInfo}>

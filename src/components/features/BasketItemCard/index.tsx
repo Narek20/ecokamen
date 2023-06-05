@@ -1,6 +1,7 @@
 import { ChangeEvent, FC, useContext, useState } from 'react';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { Box, TextField, IconButton, Typography, Button } from '@mui/material';
+import { Box, TextField, Typography, Button } from '@mui/material';
 import { removeBasketItem } from '@/services/basket.service';
 import { useToast } from '@/contexts/toast.context';
 import { BasketContext } from '@/contexts/basket.context';
@@ -19,7 +20,7 @@ const BasketItemCard: FC<IBasket> = ({
 }) => {
   const [itemQuantity, setItemQuantity] = useState(quantity);
 
-  const router = useRouter()
+  const router = useRouter();
   const { showToast } = useToast();
   const { refetchItems } = useContext(BasketContext);
 
@@ -30,7 +31,7 @@ const BasketItemCard: FC<IBasket> = ({
   };
 
   const handleClick = async () => {
-    router.push("/order")
+    router.push('/order');
   };
 
   const handleRemove = async () => {
@@ -52,7 +53,7 @@ const BasketItemCard: FC<IBasket> = ({
   return (
     <Box className={styles.card}>
       <Box className={styles.stoneDetails}>
-        <img className={styles.stoneImage} src={imageHref} />
+        <Image width={100} height={100} src={imageHref} alt="basketImage" />
         <Box className={styles.stoneInfo}>
           <Typography className={styles.title}>{title}</Typography>
           <Box className={styles.infoContainer}>
