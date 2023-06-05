@@ -1,15 +1,15 @@
 import { useContext, useEffect, useState, ChangeEvent } from 'react';
 import { Box, TextField, IconButton, Typography, Button } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import EmptyBasket from '@/components/features/EmptyPage';
+import BasketItemCard from '@/components/features/BasketItemCard';
 import { useToast } from '@/contexts/toast.context';
 import { AuthContext } from '@/contexts/auth.context';
 import { BasketContext } from '@/contexts/basket.context';
-import BasketItemCard from '@/components/features/BasketItemCard';
 import { removeAllBasketItems } from '@/services/basket.service';
 import { IBasket } from '@/types/basket.types';
 
 import styles from './styles.module.scss';
-import EmptyBasket from '@/components/features/EmptyPage';
 
 const BasketPage = () => {
   const { count, basketItems, refetchItems } = useContext(BasketContext);
@@ -77,7 +77,7 @@ const BasketPage = () => {
           ))}
         </Box>
       ) : (
-        <EmptyBasket type="basket"/>
+        <EmptyBasket type="basket" />
       )}
     </Box>
   );

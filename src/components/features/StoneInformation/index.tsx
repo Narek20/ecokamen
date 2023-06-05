@@ -45,7 +45,7 @@ const StoneInformation = () => {
             <Typography className={styles.title}>{stoneData.title}</Typography>
           )}
           <Typography className={styles.priceLabel}>
-            Цена:{' '}
+            Цена:
             <Typography className={styles.price}>
               {stoneData.price}руб./м<sup>2</sup>
             </Typography>

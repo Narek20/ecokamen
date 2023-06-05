@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { Typography } from '@mui/material';
+
 import styles from './styles.module.scss';
 
 interface IProps {

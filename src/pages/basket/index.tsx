@@ -4,7 +4,7 @@ import BasketPage from '@/components/pages/BasketPage';
 const Basket = () => {
   return (
     <Layout>
-     <BasketPage />
+      <BasketPage />
     </Layout>
   );
 };

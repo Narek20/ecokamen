@@ -4,7 +4,7 @@ import { Box, Typography } from '@mui/material';
 import styles from './styles.module.scss';
 
 interface IProps {
-  message: string
+  message: string;
 }
 
 const ValidationMessage: FC<IProps> = ({ message }) => {

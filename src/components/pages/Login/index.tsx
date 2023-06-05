@@ -3,9 +3,9 @@ import { useRouter } from 'next/router';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Box, Typography, IconButton, TextField, Button } from '@mui/material';
 import ValidationMessage from '@/components/shared/ValidationMessage';
-import { userLogin } from '@/services/auth.service';
 import { useToast } from '@/contexts/toast.context';
 import { AuthContext } from '@/contexts/auth.context';
+import { userLogin } from '@/services/auth.service';
 
 import styles from './styles.module.scss';
 

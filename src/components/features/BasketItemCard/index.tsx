@@ -1,18 +1,16 @@
 import { ChangeEvent, FC, useContext, useState } from 'react';
+import { useRouter } from 'next/router';
 import { Box, TextField, IconButton, Typography, Button } from '@mui/material';
-import { placeOrder } from '@/services/order.service';
 import { removeBasketItem } from '@/services/basket.service';
 import { useToast } from '@/contexts/toast.context';
 import { BasketContext } from '@/contexts/basket.context';
 import { IBasket } from '@/types/basket.types';
 
 import styles from './styles.module.scss';
-import { useRouter } from 'next/router';
 
 const BasketItemCard: FC<IBasket> = ({
   title,
   imageHref,
-  pageLink,
   price,
   thickness,
   quantity,

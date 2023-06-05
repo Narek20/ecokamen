@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { Box, Typography } from '@mui/material';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import HistoryIcon from '@mui/icons-material/History';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 import styles from './styles.module.scss';
 
@@ -22,7 +22,7 @@ const EmptyPage: FC<IProps> = ({ type }) => {
         <Typography className={styles.hintText}>
           <Link className={styles.link} href="/">
             Нажмите здесь
-          </Link>{' '}
+          </Link>
           чтобы продолжить покупки
         </Typography>
       </Box>

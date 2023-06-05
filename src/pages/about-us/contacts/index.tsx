@@ -4,7 +4,7 @@ import ContactsPage from '@/components/pages/ContactsPage';
 const Basket = () => {
   return (
     <Layout>
-     <ContactsPage />
+      <ContactsPage />
     </Layout>
   );
 };

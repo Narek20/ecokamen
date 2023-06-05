@@ -1,7 +1,5 @@
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
-import styles from '@/styles/Home.module.css';
-import Home from './home';
 import Layout from '@/components/features/Layout';
 import HomeComponent from '@/components/pages/Home';
 
@@ -16,11 +14,9 @@ export default function Main() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
-        <Layout>
-          <HomeComponent />
-        </Layout>
-      
+      <Layout>
+        <HomeComponent />
+      </Layout>
     </>
   );
 }

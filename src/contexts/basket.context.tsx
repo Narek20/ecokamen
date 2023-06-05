@@ -5,7 +5,6 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import { IBasket } from '@/types/basket.types';
 import { getBasketItems } from '@/services/basket.service';
 import { AuthContext } from './auth.context';
 
