@@ -66,7 +66,7 @@ export const removeBasketItem = async (
 };
 
 export const removeAllBasketItems = async (
-  userId: string,
+  userId: string
 ): Promise<IResponse> => {
   try {
     const data = await axiosInstance.delete(

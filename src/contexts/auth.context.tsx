@@ -8,6 +8,7 @@ import React, {
 import { getUser } from '@/services/user.service';
 import { IUser } from '@/types/user.types';
 
+// Create a AuthContext
 export const AuthContext = createContext({
   isLoggedIn: false,
   login: () => {},
@@ -23,9 +24,10 @@ export const AuthContext = createContext({
   },
 });
 
+// AuthContext component that wraps your app
 export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userData, setUserData] = useState<IUser>({
+  const [userData, setUserData] = useState<IUser & {_id: string}>({
     _id: '',
     name: '',
     surname: '',
@@ -45,10 +47,10 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   const getUserData = async () => {
     const data = await getUser();
-    
+
     if (data.success) {
       setUserData(data.data);
-      login()
+      login();
     }
   };
 

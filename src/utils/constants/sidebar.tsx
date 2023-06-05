@@ -1,3 +1,8 @@
+import LogoutIcon from '@mui/icons-material/Logout';
+import ArticleIcon from '@mui/icons-material/Article';
+import HistoryIcon from '@mui/icons-material/History';
+import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
+
 export const categories = [
   {
     link: '/category/plitnyak',
@@ -103,5 +108,27 @@ export const aboutUsSidebar = [
     title: 'Контакты',
     imageHref: '',
   },
+];
 
+export const ProfileSidebarItems = [
+  {
+    title: 'Текущие заказы',
+    link: '/current-orders',
+    icon: <ReceiptLongIcon />,
+  },
+  {
+    title: 'Личные данные',
+    link: '/personal',
+    icon: <ArticleIcon />,
+  },
+  {
+    title: 'История заказов',
+    link: '/orders-history',
+    icon: <HistoryIcon />,
+  },
+  {
+    title: 'Выход',
+    link: '/',
+    icon: <LogoutIcon />,
+  },
 ];

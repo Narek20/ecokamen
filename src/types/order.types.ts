@@ -21,6 +21,12 @@ export enum OrderDetails {
   PRODUCT_IDS = 'productIds',
 }
 
+export enum PaymentTypes {
+  BANK_CARD = 'bank card',
+  CASH = 'cash',
+  SBERBANK = 'sberbank',
+}
+
 export interface IOrderDetails {
   personalDetails: {
     fullName: string;

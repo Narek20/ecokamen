@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
-import CategoryCard from '../CategoryCard';
 import { categories } from '@/utils/constants/sidebar';
+import CategoryCard from '../CategoryCard';
 
 import styles from './styles.module.scss';
 

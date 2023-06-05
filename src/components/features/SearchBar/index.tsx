@@ -9,8 +9,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Box, TextField, IconButton, MenuItem } from '@mui/material';
 import { getStonesBySearchKey } from '@/services/stone.service';
 import logo from '@/assets/svg/logo.svg';
-import Basket from '../Basket';
 import { IStone } from '@/types/stone.types';
+import Basket from '../Basket';
 
 import styles from './styles.module.scss';
 

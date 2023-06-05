@@ -8,9 +8,9 @@ import {
   TableRow,
   Typography,
 } from '@mui/material';
+import { IStone } from '@/types/stone.types';
 
 import styles from './styles.module.scss';
-import { IStone } from '@/types/stone.types';
 
 interface IProps {
   stone: IStone;

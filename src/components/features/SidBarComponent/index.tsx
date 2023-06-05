@@ -1,8 +1,7 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import { Box, MenuItem, Select } from '@mui/material';
+import { Box, MenuItem, Select, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
 
 import styles from './styles.module.scss';
 

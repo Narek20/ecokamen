@@ -33,5 +33,5 @@ export const UserInfoFields = [
     title: 'Подтверждение пароля',
     type: 'password',
     key: 'repeatPassword',
-  }
+  },
 ];

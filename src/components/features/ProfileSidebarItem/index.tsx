@@ -1,8 +1,8 @@
 import { FC, ReactNode } from 'react';
 import Link from 'next/link';
+import { Typography } from '@mui/material';
 
 import styles from './styles.module.scss';
-import { Typography } from '@mui/material';
 
 interface IProps {
   title: string;

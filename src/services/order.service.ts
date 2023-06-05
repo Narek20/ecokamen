@@ -48,7 +48,9 @@ export const getOrdersById = async (orderId: string): Promise<IResponse> => {
   }
 };
 
-export const placeOrder = async (orderData: IOrderDetails): Promise<IResponse> => {
+export const placeOrder = async (
+  orderData: IOrderDetails
+): Promise<IResponse> => {
   try {
     const data = await axiosInstance.post(
       orderEndpoints.PLACE_ORDER,
@@ -64,9 +66,7 @@ export const placeOrder = async (orderData: IOrderDetails): Promise<IResponse> =
   }
 };
 
-export const removeOrder = async (
-  orderId: string
-): Promise<IResponse> => {
+export const removeOrder = async (orderId: string): Promise<IResponse> => {
   try {
     const data = await axiosInstance.delete(
       orderEndpoints.DELETE_ORDER + orderId

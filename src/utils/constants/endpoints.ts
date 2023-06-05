@@ -3,7 +3,7 @@ export const userEndpoints = {
   REGISTER: 'users/register',
   GET_USER: 'users/',
   UPDATE_USER: 'users/',
-  SUBSCRIBE_FOR_NEWS: 'email/subscribe/'
+  SUBSCRIBE_FOR_NEWS: 'email/subscribe/',
 };
 
 export const orderEndpoints = {

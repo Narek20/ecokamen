@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { Box, Typography } from '@mui/material';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import SberbankLogo from '@/assets/Images/sberbank.png'
-import { OrderDetails } from '@/types/order.types';
+import SberbankLogo from '@/assets/Images/sberbank.png';
+import { OrderDetails, PaymentTypes } from '@/types/order.types';
 
 import styles from './styles.module.scss';
 
@@ -21,10 +21,10 @@ const Payment: FC<IProps> = ({ paymentVariant, handleChange }) => {
         <Box
           className={styles.paymentVariant}
           onClick={() =>
-            handleChange('bank card', OrderDetails.PAYMENT_DETAILS)
+            handleChange(PaymentTypes.BANK_CARD, OrderDetails.PAYMENT_DETAILS)
           }
           sx={
-            paymentVariant === 'bank card'
+            paymentVariant === PaymentTypes.BANK_CARD
               ? {
                   boxShadow: '0px 3px 10px 1px #2075de',
                 }
@@ -38,9 +38,11 @@ const Payment: FC<IProps> = ({ paymentVariant, handleChange }) => {
         </Box>
         <Box
           className={styles.paymentVariant}
-          onClick={() => handleChange('cash', OrderDetails.PAYMENT_DETAILS)}
+          onClick={() =>
+            handleChange(PaymentTypes.CASH, OrderDetails.PAYMENT_DETAILS)
+          }
           sx={
-            paymentVariant === 'cash'
+            paymentVariant === PaymentTypes.CASH
               ? {
                   boxShadow: '0px 3px 10px 1px #2075de',
                 }
@@ -52,9 +54,11 @@ const Payment: FC<IProps> = ({ paymentVariant, handleChange }) => {
         </Box>
         <Box
           className={styles.paymentVariant}
-          onClick={() => handleChange('sberbank', OrderDetails.PAYMENT_DETAILS)}
+          onClick={() =>
+            handleChange(PaymentTypes.SBERBANK, OrderDetails.PAYMENT_DETAILS)
+          }
           sx={
-            paymentVariant === 'sberbank'
+            paymentVariant === PaymentTypes.SBERBANK
               ? {
                   boxShadow: '0px 3px 10px 1px #2075de',
                 }

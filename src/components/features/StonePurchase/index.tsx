@@ -77,7 +77,6 @@ const StonePurchase: FC<IProps> = (props) => {
       <FormControl fullWidth>
         {thickness && (
           <>
-            {' '}
             <InputLabel id="demo-simple-select-label">Толщина, мм</InputLabel>
             <Select
               value={thickness}

@@ -1,9 +1,9 @@
-export type IStone =  {
+export type IStone = {
   _id: string;
   title: string;
   description: string;
   category: string;
-  imageHrefs: string[],
+  imageHrefs: string[];
   texture: string;
   price: string;
   thickness: string;
@@ -12,4 +12,4 @@ export type IStone =  {
   searchCategory: string;
   deliveryForm?: string;
   link: string;
-}
+};

@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { Box, Typography } from '@mui/material';
-import { IBasket } from '@/types/basket.types';
 
 import styles from './styles.module.scss';
 
