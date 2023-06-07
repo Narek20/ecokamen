@@ -76,7 +76,7 @@ const Footer = () => {
           <Link className={styles.sectionElem} href="/about-us">
             О компании
           </Link>
-          <Link className={styles.sectionElem} href="/about-us/contacts">
+          <Link className={styles.sectionElem} href="/contacts">
             Связь
           </Link>
         </Box>

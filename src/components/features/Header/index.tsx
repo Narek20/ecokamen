@@ -30,7 +30,7 @@ const Header = () => {
             <Link className={styles.link} href="/about-us">
               О компании
             </Link>
-            <Link className={styles.link} href="/about-us/contacts">
+            <Link className={styles.link} href="/contacts">
               Контакты
             </Link>
             <Link className={styles.link} href=""></Link>

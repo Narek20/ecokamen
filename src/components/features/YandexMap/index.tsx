@@ -36,10 +36,7 @@ const MapComponent: FC<IProps> = ({ isContactMap }) => {
   }, [location]);
 
   return (
-    <Box
-      className={styles.mapContainer}
-      style={isContactMap ? { width: '60%' } : {}}
-    >
+    <Box className={styles.mapContainer}>
       {!isContactMap && (
         <Typography className={styles.mapLabel}>
           Выберите место доставки на карте
@@ -49,7 +46,11 @@ const MapComponent: FC<IProps> = ({ isContactMap }) => {
         <Map
           defaultState={defaultState}
           state={{ ...defaultState, center: location }}
-          onClick={(e: any) => setLocation(e._sourceEvent.originalEvent.coords)}
+          onClick={
+            isContactMap
+              ? undefined
+              : (e: any) => setLocation(e._sourceEvent.originalEvent.coords)
+          }
         >
           <Placemark geometry={location} />
         </Map>

@@ -2,42 +2,69 @@
   width: 100%;
   padding: 0px 20px;
 
-    .title {
-      color :black;
-      font-size: 30px;
-    }
+  .title {
+    color: black;
+    font-size: 30px;
+  }
 
-    .content {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      .contacts {
-        width: 40%;
-        .contact {
-          display: flex;
-          margin-top: 30px;
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 
-          .iconContainer {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgb(255, 140, 0);
-            margin-right: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
+    .contacts {
+      width: 40%;
 
-          .contactTitle {
-            font-weight: 600;
-            color: black;
-          }
+      .contact {
+        display: flex;
+        margin-top: 30px;
 
-          .contactInfo {
-            color: black;
-            margin-top: 5px;
-          }
+        .iconContainer {
+          margin-right: 20px;
+        }
+
+        .contactTitle {
+          font-weight: 600;
+          color: black;
+        }
+
+        .contactInfo {
+          color: black;
+          margin-top: 5px;
         }
       }
     }
+
+    .mapContainer {
+      width: 60%;
+      height: 500px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .contactsPage {
+    .content {
+      flex-direction: column;
+      justify-content: center;
+
+      .contacts {
+        width: 100% !important;
+      }
+
+      .mapContainer {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contactsPage {
+    .content {
+      .mapContainer {
+        height: 300px;
+      }
+    }
+  }
 }

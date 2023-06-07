@@ -1,7 +1,14 @@
 import { useContext, useEffect, useState, ChangeEvent } from 'react';
-import { Box, TextField, IconButton, Typography, Button } from '@mui/material';
+import {
+  Box,
+  TextField,
+  IconButton,
+  Typography,
+  Button,
+  useMediaQuery,
+} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import EmptyBasket from '@/components/features/EmptyPage';
+import { useTheme } from '@material-ui/core';
 import BasketItemCard from '@/components/features/BasketItemCard';
 import { useToast } from '@/contexts/toast.context';
 import { AuthContext } from '@/contexts/auth.context';
@@ -10,6 +17,7 @@ import { removeAllBasketItems } from '@/services/basket.service';
 import { IBasket } from '@/types/basket.types';
 
 import styles from './styles.module.scss';
+import EmptyPage from '@/components/features/EmptyPage';
 
 const BasketPage = () => {
   const { count, basketItems, refetchItems } = useContext(BasketContext);
@@ -17,6 +25,9 @@ const BasketPage = () => {
   const { showToast } = useToast();
 
   const [filteredItems, setFilteredItems] = useState(basketItems);
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down(800));
 
   const handleItemsFilter = (
     evt: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -61,14 +72,16 @@ const BasketPage = () => {
             ),
           }}
         />
-        <Box className={styles.actions}>
-          <Typography className={styles.basketQty}>
-            В корзине {count} предметов
-          </Typography>
-          <Button className={styles.basketRemoveBtn} onClick={handleRemove}>
-            Очистить корзину
-          </Button>
-        </Box>
+        {!isMobile && (
+          <Box className={styles.actions}>
+            <Typography className={styles.basketQty}>
+              В корзине {count} предметов
+            </Typography>
+            <Button className={styles.basketRemoveBtn} onClick={handleRemove}>
+              Очистить корзину
+            </Button>
+          </Box>
+        )}
       </Box>
       {basketItems.length ? (
         <Box className={styles.itemsList}>
@@ -77,7 +90,14 @@ const BasketPage = () => {
           ))}
         </Box>
       ) : (
-        <EmptyBasket type="basket" />
+        <EmptyPage type="basket" />
+      )}
+      {isMobile && (
+        <Box className={styles.actions}>
+          <Button className={styles.basketRemoveBtn} onClick={handleRemove}>
+            Очистить корзину
+          </Button>
+        </Box>
       )}
     </Box>
   );

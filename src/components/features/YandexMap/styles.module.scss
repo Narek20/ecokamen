@@ -1,5 +1,6 @@
 .mapContainer {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,30 +12,11 @@
 
   div {
     width: 100% !important;
-    height: 1000px !important;
+    height: 100% !important;
   }
 
   .ymaps-2-1-79-map {
     width: 100% !important;
-    height: 1000px !important;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .mapContainer {
-
-    .mapLabel {
-      color: black;
-    }
-
-    div {
-      width: 300px !important;
-      height: 300px !important;
-    }
-
-    .ymaps-2-1-79-map {
-      width: auto !important;
-      height: 300px !important;
-    }
+    height: 100% !important;
   }
 }

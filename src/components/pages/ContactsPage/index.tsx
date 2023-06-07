@@ -15,7 +15,7 @@ const ContactsPage = () => {
         <Box className={styles.contacts}>
           <Box className={styles.contact}>
             <Box className={styles.iconContainer}>
-              <BusinessIcon />
+              <BusinessIcon sx={{ color: 'rgb(255, 140, 0)' }} />
             </Box>
             <Box>
               <Typography className={styles.contactTitle}>Адресс</Typography>
@@ -32,7 +32,7 @@ const ContactsPage = () => {
           </Box>
           <Box className={styles.contact}>
             <Box className={styles.iconContainer}>
-              <PhoneIcon />
+              <PhoneIcon sx={{ color: 'rgb(255, 140, 0)' }} />
             </Box>
             <Box>
               <Typography className={styles.contactTitle}>Телефон</Typography>
@@ -49,7 +49,7 @@ const ContactsPage = () => {
           </Box>
           <Box className={styles.contact}>
             <Box className={styles.iconContainer}>
-              <EmailIcon />
+              <EmailIcon sx={{ color: 'rgb(255, 140, 0)' }} />
             </Box>
             <Box>
               <Typography className={styles.contactTitle}>E-mail</Typography>
@@ -60,7 +60,7 @@ const ContactsPage = () => {
           </Box>
           <Box className={styles.contact}>
             <Box className={styles.iconContainer}>
-              <AccessTimeIcon />
+              <AccessTimeIcon sx={{ color: 'rgb(255, 140, 0)' }} />
             </Box>
             <Box>
               <Typography className={styles.contactTitle}>
@@ -75,7 +75,9 @@ const ContactsPage = () => {
             </Box>
           </Box>
         </Box>
-        <MapComponent isContactMap={true} />
+        <Box className={styles.mapContainer}>
+          <MapComponent isContactMap/>
+        </Box>
       </Box>
     </Box>
   );
