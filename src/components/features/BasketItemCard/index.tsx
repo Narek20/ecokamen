@@ -1,7 +1,14 @@
 import { ChangeEvent, FC, useContext, useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { Box, TextField, Typography, Button } from '@mui/material';
+import {
+  Box,
+  TextField,
+  Typography,
+  Button,
+  useMediaQuery,
+} from '@mui/material';
+import { useTheme } from '@material-ui/core';
 import { removeBasketItem } from '@/services/basket.service';
 import { useToast } from '@/contexts/toast.context';
 import { BasketContext } from '@/contexts/basket.context';
@@ -20,9 +27,11 @@ const BasketItemCard: FC<IBasket> = ({
 }) => {
   const [itemQuantity, setItemQuantity] = useState(quantity);
 
+  const theme = useTheme();
   const router = useRouter();
   const { showToast } = useToast();
   const { refetchItems } = useContext(BasketContext);
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleQuantityChange = (
     evt: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -55,7 +64,9 @@ const BasketItemCard: FC<IBasket> = ({
       <Box className={styles.stoneDetails}>
         <Image width={100} height={100} src={imageHref} alt="basketImage" />
         <Box className={styles.stoneInfo}>
-          <Typography className={styles.title}>{title}</Typography>
+          <Box className={styles.titleContainer}>
+            <Typography className={styles.title}>{title}</Typography>
+          </Box>
           <Box className={styles.infoContainer}>
             <Typography className={styles.infoLabel}>Толщина:</Typography>
             <Typography className={styles.info}>{thickness}мм</Typography>

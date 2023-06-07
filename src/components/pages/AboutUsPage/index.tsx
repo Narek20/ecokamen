@@ -8,7 +8,6 @@ import styles from './styles.module.scss';
 const AboutUsPage = () => {
   return (
     <Box className={styles.aboutUsPage}>
-      <SidebarComponent categories={aboutUsSidebar} />
       <Box className={styles.content}>
         <Typography className={styles.title}>О компании</Typography>
         <Typography className={styles.simpleText}>

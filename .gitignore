@@ -8,9 +8,6 @@
 # testing
 /coverage
 
-/api
-/backend
-
 # next.js
 /.next/
 /out/
