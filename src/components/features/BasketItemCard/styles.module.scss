@@ -1,10 +1,9 @@
 .card {
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 20px;
   box-shadow: 0px 3px 10px 1px rgb(128, 128, 128, 0.6);
-
   margin-top: 10px;
   align-items: center;
 
@@ -41,27 +40,32 @@
 
   .priceInfo {
     display: flex;
-    .priceContainer {
-      width: 100px;
+
+    .qtyContainer {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0px 20px;
 
-      .price {
-        color: black;
-        font-size: 20px;
+      .priceContainer {
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px 20px;
+
+        .price {
+          color: black;
+          font-size: 20px;
+        }
+
+        .priceLabel {
+          font-size: 14px;
+          color: gray;
+          margin-top: 10px;
+        }
       }
 
-      .priceLabel {
-        font-size: 14px;
-        color: gray;
-        margin-top: 10px;
+      .qtyInput {
+        width: 100px;
       }
-    }
-
-    .qtyInput {
-      width: 100px;
     }
 
     .actions {
@@ -80,6 +84,81 @@
         color: green;
         border: 1px solid green;
         width: 200px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .card {
+    width: fit-content;
+    flex-direction: column;
+
+    .stoneDetails {
+      .stoneInfo {
+        .title {
+          margin-top: 15px;
+          text-align: center;
+        }
+
+        .infoContainer {
+          display: none;
+        }
+      }
+    }
+
+    .priceInfo {
+      margin-top: 15px;
+      flex-direction: column;
+
+      .qtyContainer {
+        width: 100%;
+        justify-content: center;
+        .priceContainer {
+          .price {
+          }
+
+          .priceLabel {
+          }
+        }
+      }
+
+      .actions {
+        margin-top: 15px;
+        flex-direction: row;
+        height: 30px;
+
+        .removeBtn {
+          width: 150px;
+          font-size: 11px;
+          margin-left: 15px;
+        }
+
+        .orderBtn {
+          width: 150px;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card {
+    .priceInfo {
+      .actions {
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+
+        .removeBtn {
+          margin: 0px;
+          margin-top: 10px;
+        }
+
+        .orderBtn {
+          margin: 0px;
+        }
       }
     }
   }
