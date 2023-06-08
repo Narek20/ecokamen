@@ -8,6 +8,7 @@
     width: 100%;
     display: flex;
     justify-content: start;
+    margin-bottom: 30px;
 
     .title {
       color: black;
@@ -17,7 +18,7 @@
   }
 
   .infoContainer {
-    width: 600px;
+    margin: 30px 20px 0px;
     text-align: center;
 
     .infoText {
@@ -28,10 +29,10 @@
   }
 
   .payment {
-    width: 600px;
     border: 1px solid rgb(219, 219, 219);
     padding: 20px;
     margin-top: 50px;
+    width: 600px;
 
     .paymentTitle {
       color: black;
@@ -40,5 +41,16 @@
       margin-bottom: 30px;
     }
   }
+}
 
+@media screen and (max-width: 700px) {
+  .successPage {
+    .titleContainer {
+      justify-content: center;
+    }
+
+    .payment {
+      width: auto;
+    }
+  }
 }
