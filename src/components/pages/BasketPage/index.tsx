@@ -92,7 +92,7 @@ const BasketPage = () => {
       ) : (
         <EmptyPage type="basket" />
       )}
-      {isMobile && (
+      {isMobile && filteredItems.length && (
         <Box className={styles.actions}>
           <Button className={styles.basketRemoveBtn} onClick={handleRemove}>
             Очистить корзину

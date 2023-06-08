@@ -22,7 +22,7 @@ const EmptyPage: FC<IProps> = ({ type }) => {
         <Typography className={styles.hintText}>
           <Link className={styles.link} href="/">
             Нажмите здесь
-          </Link>
+          </Link>{' '}
           чтобы продолжить покупки
         </Typography>
       </Box>

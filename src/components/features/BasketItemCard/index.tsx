@@ -31,7 +31,7 @@ const BasketItemCard: FC<IBasket> = ({
   const router = useRouter();
   const { showToast } = useToast();
   const { refetchItems } = useContext(BasketContext);
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down(960));
 
   const handleQuantityChange = (
     evt: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -61,8 +61,13 @@ const BasketItemCard: FC<IBasket> = ({
 
   return (
     <Box className={styles.card}>
+      <Image
+        width={isMobile ? 150 : 100}
+        height={isMobile ? 150 : 100}
+        src={imageHref}
+        alt="basketImage"
+      />
       <Box className={styles.stoneDetails}>
-        <Image width={100} height={100} src={imageHref} alt="basketImage" />
         <Box className={styles.stoneInfo}>
           <Box className={styles.titleContainer}>
             <Typography className={styles.title}>{title}</Typography>
@@ -80,20 +85,22 @@ const BasketItemCard: FC<IBasket> = ({
         </Box>
       </Box>
       <Box className={styles.priceInfo}>
-        <Box>
-          <TextField
-            className={styles.qtyInput}
-            defaultValue={quantity}
-            type="number"
-            onChange={handleQuantityChange}
-            InputProps={{ inputProps: { min: 1 } }}
-          />
-        </Box>
-        <Box className={styles.priceContainer}>
-          <Typography className={styles.price}>
-            {+itemQuantity * +price}руб
-          </Typography>
-          <Typography className={styles.priceLabel}>Сумма</Typography>
+        <Box className={styles.qtyContainer}>
+          <Box>
+            <TextField
+              className={styles.qtyInput}
+              defaultValue={quantity}
+              type="number"
+              onChange={handleQuantityChange}
+              InputProps={{ inputProps: { min: 1 } }}
+            />
+          </Box>
+          <Box className={styles.priceContainer}>
+            <Typography className={styles.price}>
+              {+itemQuantity * +price}руб
+            </Typography>
+            <Typography className={styles.priceLabel}>Сумма</Typography>
+          </Box>
         </Box>
         <Box className={styles.actions}>
           <Button className={styles.orderBtn} onClick={handleClick}>
