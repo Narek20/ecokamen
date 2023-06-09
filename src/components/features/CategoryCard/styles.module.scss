@@ -19,3 +19,10 @@
 .card:hover {
   box-shadow: 1px 1px 10px 1px rgb(128, 128, 128);
 }
+
+@media screen and (max-width: 500px) {
+  .card {
+    width: 150px;
+    height: 150px;
+  }
+}

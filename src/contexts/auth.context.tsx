@@ -27,7 +27,7 @@ export const AuthContext = createContext({
 // AuthContext component that wraps your app
 export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userData, setUserData] = useState<IUser & {_id: string}>({
+  const [userData, setUserData] = useState<IUser & { _id: string }>({
     _id: '',
     name: '',
     surname: '',
@@ -39,10 +39,21 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   const login = () => {
     setIsLoggedIn(true);
+    getUserData();
   };
 
   const logout = () => {
     setIsLoggedIn(false);
+    localStorage.removeItem('token');
+    setUserData({
+      _id: '',
+      name: '',
+      surname: '',
+      patronymic: '',
+      email: '',
+      phone: '',
+      password: '',
+    });
   };
 
   const getUserData = async () => {

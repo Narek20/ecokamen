@@ -49,6 +49,11 @@ const StonePurchase: FC<IProps> = (props) => {
 
   const handleAdd = async () => {
     if (stoneQty) {
+      if (!userData._id) {
+        showToast('error', 'Чтобы совершить покупки пожалуйста авторизуйтесь');
+        return;
+      }
+
       if (basketItems.find((stone: string) => stone === props.stoneId)) {
         showToast('info', 'Предмет уже добавлень в корзину');
         return;
