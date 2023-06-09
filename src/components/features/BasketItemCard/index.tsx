@@ -61,13 +61,13 @@ const BasketItemCard: FC<IBasket> = ({
 
   return (
     <Box className={styles.card}>
-      <Image
-        width={isMobile ? 150 : 100}
-        height={isMobile ? 150 : 100}
-        src={imageHref}
-        alt="basketImage"
-      />
+      {isMobile && (
+        <Image width={150} height={150} src={imageHref} alt="basketImage" />
+      )}
       <Box className={styles.stoneDetails}>
+        {!isMobile && (
+          <Image width={100} height={100} src={imageHref} alt="basketImage" />
+        )}
         <Box className={styles.stoneInfo}>
           <Box className={styles.titleContainer}>
             <Typography className={styles.title}>{title}</Typography>

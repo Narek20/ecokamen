@@ -91,7 +91,7 @@
 
 @media screen and (max-width: 960px) {
   .card {
-    width: fit-content;
+    width: 100%;
     flex-direction: column;
 
     .stoneDetails {
@@ -114,13 +114,6 @@
       .qtyContainer {
         width: 100%;
         justify-content: center;
-        .priceContainer {
-          .price {
-          }
-
-          .priceLabel {
-          }
-        }
       }
 
       .actions {

@@ -16,19 +16,18 @@ const StonesList = () => {
   const getStones = async () => {
     const data = await getStonesByCategory(category as string);
     if (data.success) {
-      console.log(data)
-      setStones(data.data)
+      setStones(data.data);
     }
   };
 
   useEffect(() => {
-    if(category) getStones();
+    if (category) getStones();
   }, [category]);
 
   return (
     <Box className={styles.stones}>
       {stones.map((category) => (
-        <StoneCard key={category.searchName} {...category} />
+        <StoneCard key={category.title} {...category} />
       ))}
     </Box>
   );
