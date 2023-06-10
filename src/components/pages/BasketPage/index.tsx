@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { useTheme } from '@material-ui/core';
+import EmptyPage from '@/components/features/EmptyPage';
 import BasketItemCard from '@/components/features/BasketItemCard';
 import { useToast } from '@/contexts/toast.context';
 import { AuthContext } from '@/contexts/auth.context';
@@ -17,7 +18,6 @@ import { removeAllBasketItems } from '@/services/basket.service';
 import { IBasket } from '@/types/basket.types';
 
 import styles from './styles.module.scss';
-import EmptyPage from '@/components/features/EmptyPage';
 
 const BasketPage = () => {
   const { count, basketItems, refetchItems } = useContext(BasketContext);

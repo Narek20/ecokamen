@@ -61,3 +61,16 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .card {
+    flex-direction: column;
+  
+    .stoneDetails {
+  
+      .title {
+      margin-top: 15px;
+      }
+    }
+  }
+}

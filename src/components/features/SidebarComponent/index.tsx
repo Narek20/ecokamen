@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Box, MenuItem, Select, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
@@ -11,15 +12,17 @@ interface IProps {
 
 const SidebarComponent: FC<IProps> = ({ categories }) => {
   const theme = useTheme();
+  const router = useRouter()
   const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
+  console.log(router.query)
 
   if (isMobile) {
     return (
-      <Select className={styles.select}>
+      <Select className={styles.select} value={router.query.category}>
         {categories.map(({ link, title }) => (
-          <Link key={title} className={styles.category} href={link}>
-            <MenuItem>{title}</MenuItem>
-          </Link>
+          <MenuItem key={title} value={title} className={styles.category}>
+            <Link href={link}>{title}</Link>
+          </MenuItem>
         ))}
       </Select>
     );
