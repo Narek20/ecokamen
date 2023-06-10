@@ -12,7 +12,7 @@ const OrderItems: FC<IProps> = ({}) => {
   const { basketItems } = useContext(BasketContext);
   
   return (
-    <Box>
+    <Box className={styles.orderItems}>
       {basketItems.map((item: IBasket) => (
         <PurchaseOrderCard key={item.title} {...item} />
       ))}

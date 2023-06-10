@@ -14,6 +14,7 @@ import { IBasket } from '@/types/basket.types';
 import { IOrderDetails, OrderDetails } from '@/types/order.types';
 
 import styles from './styles.module.scss';
+import { removeAllBasketItems } from '@/services/basket.service';
 
 const OrderComponents = [
   { component: BuyerInfo },
@@ -43,7 +44,7 @@ const OrderPage = () => {
 
   const { showToast } = useToast();
   const { userData } = useContext(AuthContext);
-  const { basketItems } = useContext(BasketContext);
+  const { basketItems, refetchItems } = useContext(BasketContext);
   const router = useRouter();
 
   const ChangeActiveStep = (key: number) => {
@@ -102,6 +103,17 @@ const OrderPage = () => {
       const data = await placeOrder(orderDetails);
       if (data.success) {
         showToast('success', 'Ваш заказ успешно оформлен');
+
+        if (userData._id) {
+          const data = await removeAllBasketItems(userData._id);
+
+          if (data.success) {
+            localStorage.setItem('basketItems', JSON.stringify([]));
+
+            showToast('success', data.message);
+            refetchItems();
+          }
+        }
         router.push('/order/' + data.data._id);
       }
     }
@@ -145,7 +157,7 @@ const OrderPage = () => {
             <>
               {index === activeStep && (
                 <orderComponent.component
-                key={index}
+                  key={index}
                   handleChange={handleChange}
                   orderDetails={orderDetails}
                   deliveryVariant={orderDetails.deliveryDetails}

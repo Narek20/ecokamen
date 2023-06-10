@@ -82,7 +82,7 @@ const SearchBar = () => {
         />
         {isFocused &&
           searchItems.map((searchItem: IStone) => (
-            <Link key={searchItem.title} href={'/category/' + searchItem.link}>
+            <Link key={searchItem._id} href={'/category/' + searchItem.link}>
               <MenuItem className={styles.menuItem} value={searchItem.title}>
                 {searchItem.title}
               </MenuItem>

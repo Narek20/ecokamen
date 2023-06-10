@@ -1,5 +1,4 @@
 import { ChangeEvent, FC, MouseEvent, useContext, useState } from 'react';
-import md5 from 'md5';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTheme } from '@material-ui/core';
@@ -62,7 +61,6 @@ const StoneCard: FC<IStone> = ({
         return;
       }
 
-      const uniqueKey = md5(new Date().toString());
 
       const data = await addBasketItem({
         quantity: stoneQty,
@@ -81,17 +79,8 @@ const StoneCard: FC<IStone> = ({
         showToast('success', 'Педмет успешно добавлен в корзину');
 
         basketItems.push(_id);
-
-        const stringifiedUniqueKeys = localStorage.getItem('uniqueKeys');
-        const uniqueKeys = stringifiedUniqueKeys
-          ? JSON.parse(stringifiedUniqueKeys)
-          : [];
-
         localStorage.setItem('basketItems', JSON.stringify(basketItems));
-        localStorage.setItem(
-          'uniqueKeys',
-          JSON.stringify([...uniqueKeys, uniqueKey])
-        );
+        
       }
     }
   };

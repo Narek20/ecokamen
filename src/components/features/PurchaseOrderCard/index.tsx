@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import { Box, Typography } from '@mui/material';
+import { useTheme } from '@material-ui/core';
+import { Box, Typography, useMediaQuery } from '@mui/material';
 
 import styles from './styles.module.scss';
 
@@ -19,9 +20,12 @@ const PurchaseOrderCard: FC<IProps> = ({
   thickness,
   quantity,
 }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
+
   return (
     <Box className={styles.card}>
-      <Image width={100} height={100} src={imageHref} alt="stoneImage" />
+      <Image width={isMobile ? 150 : 100} height={isMobile ? 150 : 100} src={imageHref} alt="stoneImage" />
       <Box className={styles.stoneDetails}>
         <Typography className={styles.title}>{title}</Typography>
         <Box className={styles.stoneInfo}>

@@ -63,7 +63,9 @@ const BuyerInfo: FC<IProps> = ({ orderDetails, handleChange }) => {
           )
         }
       />
-      <MapComponent />
+      <Box className={styles.mapContainer}>
+        <MapComponent />
+      </Box>
     </Box>
   );
 };
