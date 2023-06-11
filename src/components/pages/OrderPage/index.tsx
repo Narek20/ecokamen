@@ -157,7 +157,7 @@ const OrderPage = () => {
             <>
               {index === activeStep && (
                 <orderComponent.component
-                  key={index}
+                  key={index + Math.random() * 1000}
                   handleChange={handleChange}
                   orderDetails={orderDetails}
                   deliveryVariant={orderDetails.deliveryDetails}

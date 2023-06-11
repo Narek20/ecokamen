@@ -16,7 +16,7 @@ const LoginComponent = () => {
   });
   const [validationMessage, setValidationMessage] = useState('');
 
-  const { login } = useContext(AuthContext);
+  const { getUserData } = useContext(AuthContext);
   const router = useRouter();
   const { showToast } = useToast();
 
@@ -36,7 +36,7 @@ const LoginComponent = () => {
       if (data.data) {
         if (data.token) localStorage.setItem('token', data.token);
         showToast('success', data.message);
-        login();
+        getUserData();
         router.push('/');
       }
 

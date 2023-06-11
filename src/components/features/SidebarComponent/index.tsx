@@ -13,10 +13,10 @@ interface IProps {
 const SidebarComponent: FC<IProps> = ({ categories }) => {
   const theme = useTheme();
   const router = useRouter()
-  const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
+  const isMobile = useMediaQuery(theme.breakpoints.up('lg'));
   console.log(router.query)
-
-  if (isMobile) {
+console.log(isMobile)
+  if (!isMobile) {
     return (
       <Select className={styles.select} value={router.query.category}>
         {categories.map(({ link, title }) => (

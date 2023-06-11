@@ -11,8 +11,10 @@ import { IUser } from '@/types/user.types';
 // Create a AuthContext
 export const AuthContext = createContext({
   isLoggedIn: false,
+  isLoading: false,
   login: () => {},
   logout: () => {},
+  getUserData: () => {},
   userData: {
     _id: '',
     name: '',
@@ -27,6 +29,7 @@ export const AuthContext = createContext({
 // AuthContext component that wraps your app
 export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [userData, setUserData] = useState<IUser & { _id: string }>({
     _id: '',
     name: '',
@@ -39,7 +42,6 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   const login = () => {
     setIsLoggedIn(true);
-    getUserData();
   };
 
   const logout = () => {
@@ -58,6 +60,7 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   const getUserData = async () => {
     const data = await getUser();
+    setIsLoading(false);
 
     if (data.success) {
       setUserData(data.data);
@@ -66,18 +69,19 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem('token')) {
-      getUserData();
-    }
+    if (localStorage.getItem('token')) getUserData();
+    else setIsLoading(false);
   }, []);
 
   return (
     <AuthContext.Provider
       value={{
         isLoggedIn,
+        isLoading,
         login,
         logout,
         userData,
+        getUserData,
       }}
     >
       {children}
