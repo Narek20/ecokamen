@@ -31,7 +31,7 @@ const StoneInformation = () => {
     if (stone) getStone();
   }, [stone]);
 
-  if (!stoneData) return <Skeleton />;
+  if (!stoneData) return <Skeleton className={styles.container}/>;
 
   return (
     <Box className={styles.container}>

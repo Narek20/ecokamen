@@ -93,7 +93,7 @@ const BasketPage = () => {
         <EmptyPage type="basket" />
       )}
       {isMobile && filteredItems.length && (
-        <Box className={styles.actions}>
+        <Box className={styles.mobileActions}>
           <Button className={styles.basketRemoveBtn} onClick={handleRemove}>
             Очистить корзину
           </Button>

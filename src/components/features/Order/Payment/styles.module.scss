@@ -43,9 +43,13 @@
       }
     }
 
-    .paymentVariant:hover {
-      box-shadow: 0px 3px 10px 1px #2075de;
-    }
+    // .paymentVariant:hover {
+    //   box-shadow: 0px 3px 10px 1px #2075de;
+    // }
+  }
+
+  .hint {
+    color: rgb(255, 187, 0);
   }
 }
 

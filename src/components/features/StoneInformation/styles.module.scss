@@ -2,6 +2,13 @@
   width: 100%;
   padding: 0px 40px 100px;
 
+  .title {
+    color: black;
+    font-size: 25px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid gray;
+  }
+
   .stoneInfo {
     width: 100%;
     display: flex;
@@ -10,9 +17,10 @@
     .stonePriceAndPurchase {
       .title {
         color: black;
-        font-size: 25px;
+        font-size: 20px;
         margin-bottom: 30px;
         border-bottom: 1px solid gray;
+        text-align: center;
       }
 
       .priceLabel {
@@ -48,9 +56,10 @@
 
     .title {
       color: black;
-      font-size: 25px;
+      font-size: 20px;
       margin-bottom: 30px;
       border-bottom: 1px solid gray;
+      text-align: center;
     }
 
     .stoneInfo {
@@ -58,9 +67,10 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      align-items: center;
 
       .stonePriceAndPurchase {
-
+        width: 100%;
         .priceLabel {
           color: black;
           display: flex;

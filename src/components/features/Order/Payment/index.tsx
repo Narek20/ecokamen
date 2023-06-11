@@ -19,17 +19,17 @@ const Payment: FC<IProps> = ({ paymentVariant, handleChange }) => {
       <Typography className={styles.title}>Варианты Оплаты</Typography>
       <Box className={styles.variantsContainer}>
         <Box
+        key={1}
           className={styles.paymentVariant}
-          onClick={() =>
-            handleChange(PaymentTypes.BANK_CARD, OrderDetails.PAYMENT_DETAILS)
-          }
-          sx={
-            paymentVariant === PaymentTypes.BANK_CARD
-              ? {
-                  boxShadow: '0px 3px 10px 1px #2075de',
-                }
-              : {}
-          }
+            // handleChange(PaymentTypes.BANK_CARD, OrderDetails.PAYMENT_DETAILS)
+          sx={{opacity: 0.5}}
+          // sx={
+          //   paymentVariant === PaymentTypes.BANK_CARD
+          //     ? {
+          //         boxShadow: '0px 3px 10px 1px #2075de',
+          //       }
+          //     : {}
+          // }
         >
           <CreditCardIcon sx={{ color: 'black', width: 60, height: 60 }} />
           <Typography className={styles.variantTitle}>
@@ -37,6 +37,7 @@ const Payment: FC<IProps> = ({ paymentVariant, handleChange }) => {
           </Typography>
         </Box>
         <Box
+        key={2}
           className={styles.paymentVariant}
           onClick={() =>
             handleChange(PaymentTypes.CASH, OrderDetails.PAYMENT_DETAILS)
@@ -53,17 +54,17 @@ const Payment: FC<IProps> = ({ paymentVariant, handleChange }) => {
           <Typography className={styles.variantTitle}>Наличными</Typography>
         </Box>
         <Box
+        key={3}
           className={styles.paymentVariant}
-          onClick={() =>
-            handleChange(PaymentTypes.SBERBANK, OrderDetails.PAYMENT_DETAILS)
-          }
-          sx={
-            paymentVariant === PaymentTypes.SBERBANK
-              ? {
-                  boxShadow: '0px 3px 10px 1px #2075de',
-                }
-              : {}
-          }
+            // handleChange(PaymentTypes.SBERBANK, OrderDetails.PAYMENT_DETAILS)
+          sx={{opacity: 0.5}}
+          // sx={
+          //   paymentVariant === PaymentTypes.SBERBANK
+          //     ? {
+          //         boxShadow: '0px 3px 10px 1px #2075de',
+          //       }
+          //     : {}
+          // }
         >
           <Image
             src={imageUrls.sberbank}
@@ -73,6 +74,7 @@ const Payment: FC<IProps> = ({ paymentVariant, handleChange }) => {
           />
         </Box>
       </Box>
+      <Typography className={styles.hint}>Онлайн оплаты на разработке</Typography>
     </Box>
   );
 };
