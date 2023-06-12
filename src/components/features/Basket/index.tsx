@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { Box, Typography, useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { Box, Typography } from '@mui/material';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { BasketContext } from '@/contexts/basket.context';
 
@@ -12,8 +11,6 @@ const Basket = () => {
   const { count } = useContext(BasketContext);
 
   const router = useRouter();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
 
   const handleClick = () => {
     router.push('/basket');
@@ -34,7 +31,7 @@ const Basket = () => {
 
   return (
     <div
-      className={scrollPosition > 115 || isMobile ? styles.fixedBasket : styles.basket}
+      className={scrollPosition > 115 ? styles.fixedBasket : styles.basket}
       onClick={handleClick}
     >
       <Box className={styles.container}>

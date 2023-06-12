@@ -84,13 +84,13 @@ const Footer = () => {
         {!isMobile && (
           <Box className={styles.infoSections}>
             <Typography className={styles.sectionTitle}>Покупателю</Typography>
-            <Link className={styles.sectionElem} href="/about-us">
+            <Link className={styles.sectionElem} href="">
               Оплата
             </Link>
-            <Link className={styles.sectionElem} href="/contact-us">
+            <Link className={styles.sectionElem} href="">
               Доставка
             </Link>
-            <Link className={styles.sectionElem} href="/about-us">
+            <Link className={styles.sectionElem} href="">
               Гарантия на товар
             </Link>
           </Box>
