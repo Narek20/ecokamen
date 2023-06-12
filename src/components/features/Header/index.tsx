@@ -1,11 +1,13 @@
 import { useContext } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Box, IconButton, Typography, Skeleton } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import { AuthContext } from '@/contexts/auth.context';
 import ProfilePicture from '../ProfilePicture';
+import logo from '@/assets/svg/logo.svg';
 
 import styles from './styles.module.scss';
 
@@ -16,7 +18,7 @@ const Header = () => {
   const handleClick = () => {
     router.push('/registration');
   };
-  console.log(isLoading)
+
   return (
     <Box className={styles.header}>
       <Box>
@@ -27,7 +29,9 @@ const Header = () => {
           <Link className={styles.link} href="/contacts">
             Контакты
           </Link>
-          <Link className={styles.link} href=""></Link>
+          <Link href="/" className={styles.logoContainer}>
+            <Image src={logo} width={50} height={40} alt="" />
+          </Link>
         </Box>
       </Box>
       <Box className={styles.rightSections}>

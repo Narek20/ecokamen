@@ -8,6 +8,11 @@
   .leftSections {
     display: flex;
 
+    .logoContainer {
+      margin-left: 10px;
+      display: none;
+    }
+
     .link {
       color: rgb(64, 64, 64);
       margin-left: 10px;
@@ -52,7 +57,13 @@
 @media screen and (max-width: 600px) {
   .header {
     .leftSections {
-      display: none;
+      .link {
+        display: none;
+      }
+      
+      .logoContainer {
+        display: block;
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import CloseIcon from '@mui/icons-material/Close';
 import SearchIcon from '@mui/icons-material/Search';
 import { Box, TextField, IconButton, MenuItem } from '@mui/material';
 import { getStonesBySearchKey } from '@/services/stone.service';
@@ -73,8 +74,10 @@ const SearchBar = () => {
           autoComplete="off"
           InputProps={{
             endAdornment: (
-              <IconButton>
-                <SearchIcon />
+              <IconButton
+                onClick={isFocused ? () => setIsFocused(false) : undefined}
+              >
+                {isFocused ? <CloseIcon/> : <SearchIcon />}
               </IconButton>
             ),
           }}
